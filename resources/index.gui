@@ -7,7 +7,7 @@
   
   <line x1="10" y1="65" x2="100%-10" y2="65" fill="magenta" stroke-width="1" />
 
-  <text id="clock" class="label" x="45%" y="170" />
+  <text id="clock" class="label label-lg" x="45%" y="170" />
   <text id="clockAMPM" class="label label-sm" />
   
   <line x1="10" y1="205" x2="100%-10" y2="205" fill="magenta" stroke-width="1" />

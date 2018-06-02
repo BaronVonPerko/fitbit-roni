@@ -12,8 +12,11 @@
   font-size: 30;
 }
 
-#clock {
+.label-lg {
   font-size: 90;
+}
+
+#clock {
   text-anchor: middle;
 }
 
