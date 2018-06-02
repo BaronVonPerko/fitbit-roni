@@ -1,0 +1,16 @@
+<svg class="background" id="root">
+    
+  <text id="battery" x="3%" y="40" class="label" />
+  
+  <image id="steps_img" y="16" fill="magenta" href="icons/stat_steps_solid_24px.png" />
+  <text id="steps" x="97%" y="40" class="label" />
+  
+  <line x1="10" y1="65" x2="100%-10" y2="65" fill="magenta" stroke-width="1" />
+
+  <text id="clock" class="label" x="45%" y="170" />
+  <text id="clockAMPM" class="label label-sm" />
+  
+  <line x1="10" y1="205" x2="100%-10" y2="205" fill="magenta" stroke-width="1" />
+  
+  <text id="date" x="50%" y="85%" class="label" />
+</svg>

@@ -1,0 +1,21 @@
+{
+  "fitbit": {
+    "appUUID": "19a118e0-3070-4f00-b76b-345d02853c70",
+    "appType": "clockface",
+    "appDisplayName": "Roni",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity"
+    ],
+    "buildTargets": [
+      "meson",
+      "higgs"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Roni"
+      }
+    }
+  }
+}
