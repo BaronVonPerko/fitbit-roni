@@ -3,18 +3,16 @@ import { settingsStorage } from "settings";
 
 // Message socket opens
 messaging.peerSocket.onopen = () => {
-  console.log("Companion Socket Open");
   restoreSettings();
 };
 
 // Message socket closes
 messaging.peerSocket.onclose = () => {
-  console.log("Companion Socket Closed");
+  //
 };
 
 // A user changes settings
 settingsStorage.onchange = evt => {
-  console.log(evt.newValue);
   let data = {
     key: evt.key,
     newValue: evt.newValue

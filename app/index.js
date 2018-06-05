@@ -1,23 +1,11 @@
-import * as messaging from "messaging";
-import Clock from "inc/clock";
-import Steps from "inc/steps";
 import Battery from "inc/battery";
+import Clock from "inc/clock";
+import Messaging from "inc/messaging";
+import Steps from "inc/steps";
 
-messaging.peerSocket.onmessage = function(evt) {
-  console.log(evt.data.value);
-  // myElement.style.fill = evt.data.value;
-}
 
+
+Battery.run();
 Clock.run();
-
-
-let steps = new Steps();
-let battery = new Battery();
-
-function update() {
-  steps.update();
-  battery.update();
-}
-update();
-
-setInterval(() => update(), 1000);
+Messaging.run();
+Steps.run();

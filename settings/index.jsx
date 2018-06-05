@@ -7,7 +7,14 @@ function mySettings(props) {
           settingsKey="color"
           colors={[
             {color: "magenta"},
-            {color: "deepskyblue"}
+            {color: "deepskyblue"},
+            {color: "aqua"},
+            {color: "aquamarine"},
+            {color: "coral"},
+            {color: "gold"},
+            {color: "hotpink"},
+            {color: "thistle"},
+            {color: "plum"},
           ]}
         />
       </Section>

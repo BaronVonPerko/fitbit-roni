@@ -16,5 +16,12 @@ export default class Steps {
     this.imgSteps.x = this.root.width - 35 - (18 * steps.length);
   }
   
+  static run() {
+    let steps = new Steps();
+    
+    steps.update();
+    
+    setInterval(() => steps.update(), 2000);
+  }
   
 }
