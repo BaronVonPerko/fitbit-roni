@@ -1,10 +1,14 @@
 import * as messaging from "messaging";
-import document from "document";
 
+import FileStore from "fileStore";
+import UI from "ui";
 
 export default class Messaging {
   
   static run() {
+    
+    let fileStore = new FileStore();
+    let ui = new UI();
     
     // Message socket opens
     messaging.peerSocket.onopen = () => {
@@ -22,10 +26,10 @@ export default class Messaging {
 
       if (evt.data.key === "color" && evt.data.newValue) {
         let color = JSON.parse(evt.data.newValue);
-
-        document.getElementsByClassName("colorConfigurable").forEach((element) => {
-          element.style.fill = color;
-        });
+        
+        fileStore.storeData(color);
+        
+        ui.updateColor(color);
       }
 
     }

@@ -1,17 +1,17 @@
 <svg class="background" id="root">
     
-  <image id="battery_img" x="3%" y="16" class="colorConfigurable" fill="magenta" href="icons/battery_solid_24px.png" />
+  <image id="battery_img" x="3%" y="16" class="colorConfigurable" href="icons/battery_solid_24px.png" />
   <text id="battery" x="3%+32" y="40" class="label" />
   
-  <image id="steps_img" y="16" fill="magenta" class="colorConfigurable" href="icons/stat_steps_solid_24px.png" />
+  <image id="steps_img" y="16" class="colorConfigurable" href="icons/stat_steps_solid_24px.png" />
   <text id="steps" x="97%" y="40" class="label" />
   
-  <line x1="10" y1="65" x2="100%-10" y2="65" class="colorConfigurable" fill="magenta" stroke-width="1" />
+  <line x1="10" y1="65" x2="100%-10" y2="65" class="colorConfigurable" stroke-width="1" />
 
   <text id="clock" class="label label-lg" x="45%" y="170" />
   <text id="clockAMPM" class="label label-sm" />
   
-  <line x1="10" y1="205" x2="100%-10" y2="205" class="colorConfigurable" fill="magenta" stroke-width="1" />
+  <line x1="10" y1="205" x2="100%-10" y2="205" class="colorConfigurable" stroke-width="1" />
   
   <text id="date" x="50%" y="85%" class="label" />
 </svg>

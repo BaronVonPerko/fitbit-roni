@@ -43,7 +43,7 @@ export default class Clock {
       let dayOfWeek = util.dayOfWeek(date.getDay());
       let month = util.nameOfMonth(date.getMonth());
       let day = date.getDate();
-      this.txtDate.text = `${dayOfWeek} ${month} ${day}`;
+      this.txtDate.text = `${dayOfWeek}   ${month} ${day}`;
     }
 
   }
