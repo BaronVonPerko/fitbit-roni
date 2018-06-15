@@ -12,24 +12,24 @@ export default class Battery {
   update() {
     let batteryChargeLevel = Math.floor(battery.chargeLevel);
     
-    if(batteryChargeLevel > 25) {
+    if(batteryChargeLevel >= 15) {
       this.imgBattery.href="icons/battery_solid_25_24px.png";
     }
     
-    if(batteryChargeLevel > 50) {
+    if(batteryChargeLevel >= 40) {
       this.imgBattery.href="icons/battery_solid_50_24px.png";
     }
     
-    if(batteryChargeLevel > 75) {
+    if(batteryChargeLevel >= 70) {
       this.imgBattery.href="icons/battery_solid_75_24px.png";
     }
     
-    if(batteryChargeLevel > 90) {
+    if(batteryChargeLevel >= 90) {
       this.imgBattery.href="icons/battery_solid_24px.png";
     }
     
-    // use the OS battery icon instead
-    if(batteryChargeLevel <= 25) {
+    // use the OS battery icon instead when the battery is low
+    if(batteryChargeLevel < 15) {
       this.hideIcon();
     } else {
       this.showIcon();
