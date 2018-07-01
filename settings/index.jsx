@@ -14,7 +14,11 @@ function mySettings(props) {
             {color: "gold"},
             {color: "hotpink"},
             {color: "thistle"},
-            {color: "plum"},
+            {color: "plum"},            
+            {color: "lightsalmon"},
+            {color: "lightcoral"},
+            {color: "indianred"},
+
           ]}
         />
       </Section>

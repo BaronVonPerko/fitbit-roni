@@ -25,7 +25,7 @@ export default class Clock {
 
       if (preferences.clockDisplay === "12h") {
         // 12h format
-        ampm = hours > 12 ? "PM" : "AM";
+        ampm = hours >= 12 ? "PM" : "AM";
         hours = hours % 12 || 12;
       } else {
         // 24h format
