@@ -16,12 +16,20 @@ export default class Steps {
     this.imgSteps.x = this.root.width - 35 - (18 * steps.length);
   }
   
-  static run() {
-    let steps = new Steps();
+  hide() {
+    this.txtSteps.style.opacity = 0;
+    this.imgSteps.style.opacity = 0;
+  }
+  
+  show() {
+    this.txtSteps.style.opacity = 1;
+    this.imgSteps.style.opacity = 1;
+  }
+  
+  run() {    
+    this.update();
     
-    steps.update();
-    
-    setInterval(() => steps.update(), 2000);
+    setInterval(() => this.update(), 2000);
   }
   
 }

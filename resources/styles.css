@@ -30,6 +30,11 @@ image {
   text-anchor: end;
 }
 
+#heartrate {
+  font-size: 30;
+  text-anchor: end;
+}
+
 #battery {
   font-size: 30;
   text-anchor: start;

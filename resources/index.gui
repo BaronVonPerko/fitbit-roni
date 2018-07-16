@@ -6,6 +6,9 @@
   <image id="steps_img" y="16" class="colorConfigurable" href="icons/stat_steps_solid_24px.png" />
   <text id="steps" x="97%" y="40" class="label" />
   
+  <image id="heartrate_img" x="75%" y="16" class="colorConfigurable" href="icons/stat_hr_open_24px.png" />
+  <text id="heartrate" x="97%" y="40" class="label" />
+  
   <line x1="10" y1="65" x2="100%-10" y2="65" class="colorConfigurable" stroke-width="1" />
 
   <text id="clock" class="label label-lg" x="45%" y="170" />
