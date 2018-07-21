@@ -27,7 +27,7 @@ export default class Messaging {
       if (evt.data.key === "color" && evt.data.newValue) {
         let color = JSON.parse(evt.data.newValue);
         
-        fileStore.storeData(color);
+        fileStore.storeColor(color);
         
         ui.updateColor(color);
       }

@@ -7,9 +7,19 @@ export default class FileStore {
     this.filetype = "json";
   }
   
-  storeData(color) {
+  storeColor(color) {
     let data = {
-      color: color
+      color,
+      versionNotes: '1.1.0',
+    };
+    
+    fs.writeFileSync(this.filename, data, this.filetype);
+  }
+  
+  storeVersionNotes(versionNotes) {
+    let data = {
+      color: this.getColor(),
+      versionNotes
     };
     
     fs.writeFileSync(this.filename, data, this.filetype);
@@ -19,8 +29,17 @@ export default class FileStore {
     try {
       return fs.readFileSync(this.filename, this.filetype).color;
     } catch(e) {
-      this.storeData("magenta");
+      this.storeColor("magenta");
       return "magenta";
+    }
+  }
+  
+  getVersionNotes() {
+    try {
+      return fs.readFileSync(this.filename, this.filetype).versionNotes === '1.1.0';
+    } catch(e) {
+      console.log(e);
+      return false;
     }
   }
   

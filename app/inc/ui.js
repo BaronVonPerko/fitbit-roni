@@ -1,12 +1,10 @@
 import document from "document";
 
-import FileStore from "fileStore";
-
 export default class UI {
   
-  constructor() {
+  constructor(filestore) {
     this.colorConfigurableElements = document.getElementsByClassName("colorConfigurable");
-    this.fileStore = new FileStore();
+    this.fileStore = filestore;
   }
   
   updateColor(color) {

@@ -1,8 +1,7 @@
 import document from "document";
+import { clearVersionNotes } from "./versionNotes";
 
-export function touchListener(steps, heartrate) {
-  
-  let state = 'steps';
+export function touchListener(steps, heartrate, state) {
   
   document.getElementById('root').onclick = () => {
     switch(state) {
@@ -15,6 +14,12 @@ export function touchListener(steps, heartrate) {
         steps.show();
         heartrate.stop();
         state = 'steps';
+        break;
+      case 'notes':
+        state = 'steps';
+        steps.show();
+        heartrate.stop();
+        clearVersionNotes();
         break;
     }  
   };
