@@ -1,4 +1,8 @@
 {
+  "devDependencies": {
+    "@fitbit/sdk": "~1.0.0",
+    "@fitbit/sdk-cli": "^1.0.0"
+  },
   "fitbit": {
     "appUUID": "19a118e0-3070-4f00-b76b-345d02853c70",
     "appType": "clockface",
@@ -17,5 +21,8 @@
         "name": "Roni"
       }
     }
+  },
+  "scripts": {
+    "build": "fitbit-build"
   }
 }
