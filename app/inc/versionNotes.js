@@ -14,7 +14,7 @@ export function showVersionNotes() {
 
 export function clearVersionNotes() {
   let fileStore = new FileStore();
-  fileStore.storeVersionNotes('1.1.0');
+  fileStore.storeVersionNotes('1.1.2');
   
   hideVersionNotes();
 }

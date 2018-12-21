@@ -23,6 +23,6 @@
   <use id="version_notes_text" href="#mixed-text-center-top" height="100%" fill="deepskyblue" visibility="hidden">
     <set href="#header/text" attributeName="text-buffer" to="What's New"/>
     <set href="#copy/text" attributeName="text-buffer"
-       to="Simply tap the screen to toggle between steps and heart rate."/>
+       to="New red and green holiday colors have been added!"/>
   </use>
 </svg>
