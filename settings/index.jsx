@@ -19,6 +19,8 @@ function mySettings(props) {
             {color: "lightcoral"},
             {color: "indianred"},
             {color: 'aliceblue'},
+            {color: '#f00'},
+            {color: '#0f0'}
           ]}
         />
         <Text>To see the heart rate monitor, simply tap anywhere on your watch screen to toggle between steps and heart rate.</Text>

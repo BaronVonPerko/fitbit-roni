@@ -10,7 +10,7 @@ export default class FileStore {
   storeColor(color) {
     let data = {
       color,
-      versionNotes: '1.1.0',
+      versionNotes: '1.1.2',
     };
     
     fs.writeFileSync(this.filename, data, this.filetype);
@@ -36,7 +36,7 @@ export default class FileStore {
   
   getVersionNotes() {
     try {
-      return fs.readFileSync(this.filename, this.filetype).versionNotes === '1.1.0';
+      return fs.readFileSync(this.filename, this.filetype).versionNotes === '1.1.2';
     } catch(e) {
       console.log(e);
       return false;
