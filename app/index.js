@@ -12,12 +12,14 @@ import { touchListener } from "inc/touchListener";
 let state = 'steps';
 
 let fileStore = new FileStore();
-if(fileStore.getVersionNotes()) {
-  hideVersionNotes();
-} else {
-  showVersionNotes();
-  state = 'notes';
-}
+
+let hasNotes = fileStore.getVersionNotes();
+// if(hasNotes) {
+  // hideVersionNotes();
+// } else {
+  // showVersionNotes();
+  // state = 'notes';
+// }
 
 new UI(fileStore).restore();
 
