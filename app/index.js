@@ -9,6 +9,12 @@ import UI from "inc/ui";
 import { showVersionNotes, hideVersionNotes } from "inc/versionNotes";
 import { touchListener } from "inc/touchListener";
 
+import analytics from "fitbit-google-analytics/app"
+ 
+analytics.configure({
+  tracking_id: "UA-26651291-17"
+});
+
 let state = 'steps';
 
 let fileStore = new FileStore();

@@ -11,7 +11,8 @@
     "wipeColor": "",
     "requestedPermissions": [
       "access_activity",
-      "access_heart_rate"
+      "access_heart_rate",
+      "access_internet"
     ],
     "buildTargets": [
       "meson"
@@ -25,5 +26,8 @@
   "scripts": {
     "build": "fitbit-build",
     "cli": "npx fitbit"
+  },
+  "dependencies": {
+    "fitbit-google-analytics": "^1.1.0"
   }
 }
