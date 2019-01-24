@@ -1,7 +1,7 @@
 {
   "devDependencies": {
-    "@fitbit/sdk": "~1.0.0",
-    "@fitbit/sdk-cli": "^1.0.0"
+    "@fitbit/sdk": "~3.0.0",
+    "@fitbit/sdk-cli": "^1.5.0"
   },
   "fitbit": {
     "appUUID": "19a118e0-3070-4f00-b76b-345d02853c70",
@@ -28,6 +28,6 @@
     "cli": "npx fitbit"
   },
   "dependencies": {
-    "fitbit-google-analytics": "^1.1.0"
+    "fitbit-google-analytics": "^1.2.0"
   }
 }
