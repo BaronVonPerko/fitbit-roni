@@ -5,18 +5,19 @@ import * as util from "../../common/utils";
 import document from "document";
 
 export default class Clock {
-  
+
   constructor() {
     // Update the clock every minute
-    clock.granularity = "minutes";
-    
+    clock.granularity = "seconds";
+
     this.txtClock = document.getElementById("clock");
+    this.txtClockSec = document.getElementById("clockSec");
     this.txtAMPM = document.getElementById("clockAMPM");
     this.txtDate = document.getElementById("date");
   }
 
   init() {
-    
+
     // Update the clock / date every tick
     clock.ontick = (evt) => {
       let today = evt.date;
@@ -34,16 +35,19 @@ export default class Clock {
 
       // Print the clock
       let mins = util.zeroPad(today.getMinutes());
+      let secs = util.zeroPad(today.getSeconds());
       this.txtClock.text = `${hours}:${mins}`;
+      this.txtClockSec.text = secs;
       this.txtAMPM.text = `${ampm}`;
       this.txtAMPM.x = hours.toString().length > 1 ? 240 : 220;
 
       // Print the date
       let date = new Date();
       let dayOfWeek = util.dayOfWeek(date.getDay());
-      let month = util.nameOfMonth(date.getMonth());
+      let month = date.getMonth();
       let day = date.getDate();
-      this.txtDate.text = `${dayOfWeek}   ${month} ${day}`;
+      const year = date.getFullYear();
+      this.txtDate.text = `${dayOfWeek}   ${month}/${day}/${year}`;
     }
 
   }
@@ -51,5 +55,5 @@ export default class Clock {
   static run() {
     new Clock().init();
   }
-  
+
 }
