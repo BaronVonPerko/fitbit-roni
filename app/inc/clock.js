@@ -28,20 +28,27 @@ export default class Clock {
         // 12h format
         ampm = hours >= 12 ? "PM" : "AM";
         hours = hours % 12 || 12;
-        this.txtClockSec.style.opacity = 1;
       } else {
         // 24h format
         hours = util.zeroPad(hours);
+      }
+
+      const displaySeconds = true;
+      if (displaySeconds) {
+        this.txtClockSec.style.opacity = 1;
+      } else {
         this.txtClockSec.style.opacity = 0;
       }
 
       // Print the clock
       const mins = util.zeroPad(today.getMinutes());
       const secs = util.zeroPad(today.getSeconds());
+      const sideTextX = hours.toString().length > 1 ? 240 : 220;
       this.txtClock.text = `${hours}:${mins}`;
       this.txtClockSec.text = secs;
       this.txtAMPM.text = `${ampm}`;
-      this.txtAMPM.x = hours.toString().length > 1 ? 240 : 220;
+      this.txtClockSec.x = sideTextX;
+      this.txtAMPM.x = sideTextX;
 
       // Print the date
       const date = new Date();

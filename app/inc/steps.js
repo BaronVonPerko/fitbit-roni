@@ -15,7 +15,7 @@ export default class Steps {
     const steps = today.local.steps.toString();
     const goalCompletionNormal = today.local.steps / goals.steps;
     const gaugeSweepAngle = util.mapNumber(goalCompletionNormal, 0, 1, 0, 360);
-    const stepIconX = this.root.width - 35 - (18 * steps.length);
+    const stepIconX = this.root.width - 40 - (18 * steps.length);
     this.txtSteps.text = steps;
     this.imgSteps.x = stepIconX;
     this.gaugeSteps.x = stepIconX - (this.imgSteps.width / 2) + 2;

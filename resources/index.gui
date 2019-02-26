@@ -13,7 +13,7 @@
   <line x1="10" y1="65" x2="100%-10" y2="65" class="colorConfigurable" stroke-width="1" />
 
   <text id="clock" class="label label-lg" x="10%" y="170" />
-  <text id="clockSec" class="label label-sm" x="60%" y="170" />
+  <text id="clockSec" class="label label-sm" x="60%" y="137" />
   <text id="clockAMPM" class="label label-sm" x="80%" y="170" />
 
   <line x1="10" y1="205" x2="100%-10" y2="205" class="colorConfigurable" stroke-width="1" />
