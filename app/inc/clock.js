@@ -20,7 +20,7 @@ export default class Clock {
 
     // Update the clock / date every tick
     clock.ontick = (evt) => {
-      let today = evt.date;
+      const today = evt.date;
       let hours = today.getHours();
       let ampm = "";
 
@@ -28,24 +28,26 @@ export default class Clock {
         // 12h format
         ampm = hours >= 12 ? "PM" : "AM";
         hours = hours % 12 || 12;
+        this.txtClockSec.style.opacity = 1;
       } else {
         // 24h format
         hours = util.zeroPad(hours);
+        this.txtClockSec.style.opacity = 0;
       }
 
       // Print the clock
-      let mins = util.zeroPad(today.getMinutes());
-      let secs = util.zeroPad(today.getSeconds());
+      const mins = util.zeroPad(today.getMinutes());
+      const secs = util.zeroPad(today.getSeconds());
       this.txtClock.text = `${hours}:${mins}`;
       this.txtClockSec.text = secs;
       this.txtAMPM.text = `${ampm}`;
       this.txtAMPM.x = hours.toString().length > 1 ? 240 : 220;
 
       // Print the date
-      let date = new Date();
-      let dayOfWeek = util.dayOfWeek(date.getDay());
-      let month = date.getMonth();
-      let day = date.getDate();
+      const date = new Date();
+      const dayOfWeek = util.dayOfWeek(date.getDay());
+      const month = date.getMonth();
+      const day = date.getDate();
       const year = date.getFullYear();
       this.txtDate.text = `${dayOfWeek}   ${month}/${day}/${year}`;
     }

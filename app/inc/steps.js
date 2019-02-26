@@ -19,9 +19,7 @@ export default class Steps {
     this.txtSteps.text = steps;
     this.imgSteps.x = stepIconX;
     this.gaugeSteps.x = stepIconX - (this.imgSteps.width / 2) + 2;
-    console.log('steps', steps, 'goal', goals.steps, 'goalNormal', goalCompletionNormal, 'angle', gaugeSweepAngle);
     this.gaugeSteps.sweepAngle = gaugeSweepAngle;
-    console.log('new angle', this.gaugeSteps.sweepAngle);
   }
 
   hide() {
