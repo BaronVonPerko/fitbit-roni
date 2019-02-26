@@ -28,5 +28,5 @@ heartrate.hide();
 touchListener(steps, heartrate, state);
 
 Battery.run();
-Clock.run();
+Clock.run(fileStore);
 Messaging.run();

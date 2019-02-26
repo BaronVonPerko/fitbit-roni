@@ -7,16 +7,24 @@ import document from "document";
 export default class Clock {
 
   constructor() {
-    // Update the clock every minute
-    clock.granularity = "seconds";
-
     this.txtClock = document.getElementById("clock");
     this.txtClockSec = document.getElementById("clockSec");
     this.txtAMPM = document.getElementById("clockAMPM");
     this.txtDate = document.getElementById("date");
   }
 
-  init() {
+  setDisplaySeconds(displaySeconds) {
+    const granularity = displaySeconds ? 'seconds' : 'minutes';
+    clock.granularity = granularity;
+    if (displaySeconds) {
+      this.txtClockSec.style.opacity = 1;
+    } else {
+      this.txtClockSec.style.opacity = 0;
+    }
+  }
+
+  init(fileStore) {
+    this.setDisplaySeconds(fileStore.getValue('displaySeconds', true));
 
     // Update the clock / date every tick
     clock.ontick = (evt) => {
@@ -31,13 +39,6 @@ export default class Clock {
       } else {
         // 24h format
         hours = util.zeroPad(hours);
-      }
-
-      const displaySeconds = true;
-      if (displaySeconds) {
-        this.txtClockSec.style.opacity = 1;
-      } else {
-        this.txtClockSec.style.opacity = 0;
       }
 
       // Print the clock
@@ -61,8 +62,10 @@ export default class Clock {
 
   }
 
-  static run() {
-    new Clock().init();
+  static instance = new Clock();
+
+  static run(fileStore) {
+    Clock.instance.init(fileStore);
   }
 
 }

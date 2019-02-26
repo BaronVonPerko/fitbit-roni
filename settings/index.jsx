@@ -8,6 +8,10 @@ function mySettings(props) {
           </Text>
         }
       >
+        <Toggle
+          settingsKey="displaySeconds"
+          label="Display Seconds"
+        />
         <ColorSelect
           settingsKey="color"
           colors={[

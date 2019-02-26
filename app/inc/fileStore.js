@@ -1,46 +1,45 @@
 import * as fs from "fs";
 
+const FILENAME = 'roni.txt';
+const FILETYPE = 'json';
+
+const DEFAULT_MODEL = {
+  color: 'magenta',
+  displaySeconds: true,
+};
+
 export default class FileStore {
-  
   constructor() {
-    this.filename = "roni.txt";
-    this.filetype = "json";
+    try {
+      this.model = fs.readFileSync(FILENAME, FILETYPE);
+    } catch (e) {
+      console.error(e);
+      this.model = DEFAULT_MODEL;
+      this.saveModel();
+    }
   }
-  
+
+  getValue(key, defaultValue) {
+    if (this.model.key === undefined) {
+      return defaultValue;
+    } else {
+      return this.model.key;
+    }
+  }
+
+  setValue(key, value) {
+    this.model[key] = value;
+  }
+
+  saveModel() {
+    fs.writeFileSync(FILENAME, this.model, FILETYPE);
+  }
+
   storeColor(color) {
-    let data = {
-      color,
-      versionNotes: '1.1.2',
-    };
-    
-    fs.writeFileSync(this.filename, data, this.filetype);
+    this.setValue('color', color);
   }
-  
-  storeVersionNotes(versionNotes) {
-    let data = {
-      color: this.getColor(),
-      versionNotes
-    };
-    
-    fs.writeFileSync(this.filename, data, this.filetype);
-  }
-  
+
   getColor() {
-    try {
-      return fs.readFileSync(this.filename, this.filetype).color;
-    } catch(e) {
-      this.storeColor("magenta");
-      return "magenta";
-    }
+    return this.getValue('color', 'magenta');
   }
-  
-  getVersionNotes() {
-    try {
-      return fs.readFileSync(this.filename, this.filetype).versionNotes === '1.1.2';
-    } catch(e) {
-      console.log(e);
-      return false;
-    }
-  }
-  
 }

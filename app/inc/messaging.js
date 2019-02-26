@@ -2,6 +2,7 @@ import * as messaging from "messaging";
 
 import FileStore from "./fileStore";
 import UI from "./ui";
+import Clock from './clock';
 
 export default class Messaging {
   static run() {
@@ -21,12 +22,20 @@ export default class Messaging {
     messaging.peerSocket.onmessage = evt => {
       console.log(evt.data.key + " : " + evt.data.newValue);
 
-      if (evt.data.key === "color" && evt.data.newValue) {
-        let color = JSON.parse(evt.data.newValue);
+      if (!evt.data.newValue) return;
 
-        fileStore.storeColor(color);
+      const data = JSON.parse(evt.data.newValue);
 
-        ui.updateColor(color);
+      switch (evt.data.key) {
+        case 'color': {
+          fileStore.storeColor(data);
+          ui.updateColor(data);
+          break;
+        } case 'displaySeconds': {
+          fileStore.setValue(evt.data.key, data);
+          Clock.instance.setDisplaySeconds(data);
+          break;
+        }
       }
     };
   }
