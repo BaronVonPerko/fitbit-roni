@@ -24,7 +24,7 @@ export default class Clock {
   }
 
   init(fileStore) {
-    this.setDisplaySeconds(fileStore.getValue('displaySeconds', true));
+    this.setDisplaySeconds(fileStore.getValue('displaySeconds'));
 
     // Update the clock / date every tick
     clock.ontick = (evt) => {

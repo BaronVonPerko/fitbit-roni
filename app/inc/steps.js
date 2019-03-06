@@ -34,10 +34,17 @@ export default class Steps {
     this.gaugeSteps.style.opacity = 1;
   }
 
-  run() {
+  start() {
     this.update();
 
-    setInterval(() => this.update(), 2000);
+    this.interval = setInterval(() => this.update(), 2000);
+    this.show();
+  }
+
+  stop() {
+    clearInterval(this.interval);
+    this.interval = null;
+    this.hide();
   }
 
 }

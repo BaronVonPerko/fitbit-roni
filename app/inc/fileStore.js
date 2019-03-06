@@ -3,12 +3,19 @@ import * as fs from "fs";
 const FILENAME = 'roni.txt';
 const FILETYPE = 'json';
 
+export const KEY_UI_STATE = 'uiState';
+export const VAL_UI_STATE_STEPS = 'steps';
+export const VAL_UI_STATE_HEART = 'heart';
+
 const DEFAULT_MODEL = {
   color: 'magenta',
   displaySeconds: true,
+  [KEY_UI_STATE]: VAL_UI_STATE_STEPS,
 };
 
 export default class FileStore {
+  static instance = new FileStore();
+
   constructor() {
     console.log('FileStore.ctor 1');
     try {
@@ -21,11 +28,11 @@ export default class FileStore {
     }
   }
 
-  getValue(key, defaultValue) {
-    console.log(`FileStore.getValue key:${key} defaultValue:${defaultValue}`);
+  getValue(key) {
+    console.log(`FileStore.getValue key:${key} defaultValue:${DEFAULT_MODEL[key]}`);
     if (this.model[key] === undefined) {
       console.log('FileStore.getValue return default');
-      return defaultValue;
+      return DEFAULT_MODEL[key];
     } else {
       console.log(`FileStore.getValue return model value '${this.model[key]}'`);
       return this.model[key];
@@ -51,6 +58,6 @@ export default class FileStore {
   }
 
   getColor() {
-    return this.getValue('color', 'magenta');
+    return this.getValue('color');
   }
 }

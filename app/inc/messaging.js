@@ -6,8 +6,8 @@ import Clock from './clock';
 
 export default class Messaging {
   static run() {
-    let fileStore = new FileStore();
-    let ui = new UI();
+    const fileStore = FileStore.instance;
+    let ui = new UI(fileStore);
 
     // Message socket opens
     messaging.peerSocket.onopen = () => {
