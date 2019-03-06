@@ -3,6 +3,7 @@ import { preferences } from "user-settings";
 import { today } from "user-activity";
 import * as util from "../../common/utils";
 import document from "document";
+import { KEY_DISPLAY_SECONDS } from './fileStore';
 
 export default class Clock {
 
@@ -24,7 +25,7 @@ export default class Clock {
   }
 
   init(fileStore) {
-    this.setDisplaySeconds(fileStore.getValue('displaySeconds'));
+    this.setDisplaySeconds(fileStore.getValue(KEY_DISPLAY_SECONDS));
 
     // Update the clock / date every tick
     clock.ontick = (evt) => {

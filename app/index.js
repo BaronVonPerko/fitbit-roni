@@ -10,7 +10,7 @@ analytics.configure({
   tracking_id: "UA-26651291-17"
 });
 
-new UI().restore();
+UI.instance.restore();
 
 Battery.run();
 Clock.run(FileStore.instance);

@@ -1,13 +1,13 @@
 import * as messaging from "messaging";
 
-import FileStore from "./fileStore";
+import FileStore, { KEY_COLOR, KEY_DISPLAY_SECONDS } from "./fileStore";
 import UI from "./ui";
 import Clock from './clock';
 
 export default class Messaging {
   static run() {
     const fileStore = FileStore.instance;
-    let ui = new UI(fileStore);
+    const ui = UI.instance;
 
     // Message socket opens
     messaging.peerSocket.onopen = () => {
@@ -26,13 +26,13 @@ export default class Messaging {
 
       const data = JSON.parse(evt.data.newValue);
 
+      fileStore.setValue(evt.data.key, data);
+
       switch (evt.data.key) {
-        case 'color': {
-          fileStore.storeColor(data);
+        case KEY_COLOR: {
           ui.updateColor(data);
           break;
-        } case 'displaySeconds': {
-          fileStore.setValue(evt.data.key, data);
+        } case KEY_DISPLAY_SECONDS: {
           Clock.instance.setDisplaySeconds(data);
           break;
         }

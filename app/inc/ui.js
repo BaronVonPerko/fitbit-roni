@@ -2,9 +2,16 @@ import document from 'document';
 import HeartRate from './heartrate';
 import Steps from './steps';
 import { touchListener } from './touchListener';
-import FileStore, { KEY_UI_STATE, VAL_UI_STATE_STEPS, VAL_UI_STATE_HEART } from './fileStore';
+import FileStore, {
+  KEY_COLOR,
+  KEY_UI_STATE,
+  VAL_UI_STATE_STEPS,
+  VAL_UI_STATE_HEART,
+} from './fileStore';
 
 export default class UI {
+  static instance = new UI();
+
   constructor() {
     this.colorConfigurableElements = document.getElementsByClassName('colorConfigurable');
     console.log(`ui.ctor fileStore:${FileStore.instance}`);
@@ -22,13 +29,12 @@ export default class UI {
   }
 
   restore() {
-    let color = FileStore.instance.getColor();
+    const color = FileStore.instance.getValue(KEY_COLOR);
     this.updateColor(color);
     this.setState(FileStore.instance.getValue(KEY_UI_STATE), false);
   }
 
   onClick() {
-    console.log(`ui.onClick this:${JSON.stringify(this)} fileStore: ${FileStore.instance}`);
     this.setState(
       FileStore.instance.getValue(KEY_UI_STATE) === VAL_UI_STATE_HEART
         ? VAL_UI_STATE_STEPS
