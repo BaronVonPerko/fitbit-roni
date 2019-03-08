@@ -4,9 +4,9 @@
     "@fitbit/sdk-cli": "^1.5.0"
   },
   "fitbit": {
-    "appUUID": "19a118e0-3070-4f00-b76b-345d02853c70",
+    "appUUID": "aabcd3a6-9b28-4278-814e-6b57afefe6ec",
     "appType": "clockface",
-    "appDisplayName": "Roni",
+    "appDisplayName": "RoniN",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
     "requestedPermissions": [
@@ -19,7 +19,7 @@
     ],
     "i18n": {
       "en": {
-        "name": "Roni"
+        "name": "RoniN"
       }
     }
   },
@@ -27,7 +27,5 @@
     "build": "fitbit-build",
     "cli": "npx fitbit"
   },
-  "dependencies": {
-    "fitbit-google-analytics": "^1.2.0"
-  }
+  "dependencies": {}
 }
