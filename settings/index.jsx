@@ -1,3 +1,5 @@
+import { APP_NAME, DATE_FORMATS } from '../common/constants';
+
 function mySettings(props) {
   return (
     <Page>
@@ -12,6 +14,12 @@ function mySettings(props) {
           settingsKey="displaySeconds"
           label="Display Seconds"
         />
+        <Select
+          label="Date Format"
+          settingsKey="dateFormat"
+          options={DATE_FORMATS.map(name => ({ name }))}
+        />
+        <Text>UI Color</Text>
         <ColorSelect
           settingsKey="color"
           colors={[

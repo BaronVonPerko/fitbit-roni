@@ -1,10 +1,11 @@
 import * as fs from "fs";
 
-const FILENAME = 'roni.txt';
+const FILENAME = 'ronin.txt';
 const FILETYPE = 'json';
 
 export const KEY_COLOR = 'color';
 export const KEY_DISPLAY_SECONDS = 'displaySeconds';
+export const KEY_DATE_FORMAT = 'dateFormat';
 export const KEY_UI_STATE = 'uiState';
 export const VAL_UI_STATE_STEPS = 'steps';
 export const VAL_UI_STATE_HEART = 'heart';
@@ -12,6 +13,7 @@ export const VAL_UI_STATE_HEART = 'heart';
 const DEFAULT_MODEL = {
   [KEY_COLOR]: 'magenta',
   [KEY_DISPLAY_SECONDS]: true,
+  [KEY_DATE_FORMAT]: { selected: 0 },
   [KEY_UI_STATE]: VAL_UI_STATE_STEPS,
 };
 

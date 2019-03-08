@@ -3,7 +3,13 @@ import { preferences } from "user-settings";
 import { today } from "user-activity";
 import * as util from "../../common/utils";
 import document from "document";
-import { KEY_DISPLAY_SECONDS } from './fileStore';
+import { KEY_DISPLAY_SECONDS, KEY_DATE_FORMAT } from './fileStore';
+import {
+  DATE_FORMATS,
+  DATE_FORMAT_MM_DD_YYYY,
+  DATE_FORMAT_DD_MM_YYYY,
+  DATE_FORMAT_MON_DD,
+} from '../../common/constants';
 
 export default class Clock {
 
@@ -58,7 +64,29 @@ export default class Clock {
       const month = date.getMonth();
       const day = date.getDate();
       const year = date.getFullYear();
-      this.txtDate.text = `${dayOfWeek}   ${month}/${day}/${year}`;
+      const dateFormatObject = fileStore.getValue(KEY_DATE_FORMAT);
+      const dateFormat = DATE_FORMATS[dateFormatObject.selected];
+      let dateString;
+      switch(dateFormat) {
+        default: {
+          console.error(`Unknown date format ${dateFormat}`);
+          // Fallthrough to default format
+        }
+        case DATE_FORMAT_MM_DD_YYYY: {
+          dateString = `${month}/${day}/${year}`;
+          break;
+        }
+        case DATE_FORMAT_DD_MM_YYYY: {
+          dateString = `${day}/${month}/${year}`;
+          break;
+        }
+        case DATE_FORMAT_MON_DD: {
+          const monthName = util.nameOfMonth(date.getMonth());
+          dateString = `${monthName} ${day}`;
+          break;
+        }
+      }
+      this.txtDate.text = `${dayOfWeek}   ${dateString}`;
     }
 
   }
