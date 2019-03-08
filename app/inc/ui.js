@@ -14,12 +14,11 @@ export default class UI {
 
   constructor() {
     this.colorConfigurableElements = document.getElementsByClassName('colorConfigurable');
-    console.log(`ui.ctor fileStore:${FileStore.instance}`);
 
     this.steps = new Steps();
     this.heartrate = new HeartRate();
 
-    document.getElementById('root').onclick = this.onClick.bind(this);
+    document.getElementById('tapzone').onclick = this.onClick.bind(this);
   }
 
   updateColor(color) {
@@ -44,7 +43,6 @@ export default class UI {
   }
 
   setState(newState, save) {
-    console.log(`ui.setState: ${newState}`);
     switch (newState) {
       case VAL_UI_STATE_STEPS:
         this.steps.start();
