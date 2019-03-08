@@ -6,7 +6,7 @@ function mySettings(props) {
       <Section
         title={
           <Text bold align="center">
-            Roni Settings
+            {`${APP_NAME} Settings`}
           </Text>
         }
       >
@@ -46,8 +46,22 @@ function mySettings(props) {
         </Text>
       </Section>
       <Section>
+        <Text>{`${APP_NAME} was developed by Eliot Lash. It is a modification of the Roni watch face developed by Chris Perko.`}</Text>
+        <Text>{`If you are enjoying ${APP_NAME} and would like to show your support financially, you may either donate to
+        Chris via the link below, or to a charity of your choice such as the EFF, Oxfam, or CarbonFund. Thank you!`}</Text>
+        <Text>{`If you are having issues with ${APP_NAME} please open an issue on the GitHub project or e-mail Eliot.
+        As I am provding this app for free I am not able to guarantee I will be able to help, but I will try if I have time.`}</Text>
+        <Link source="https://github.com/fadookie/fitbit-roni">
+          {`${APP_NAME} source code and issue tracker`}
+        </Link>
+        <Link source="mailto:fadookie@gmail.com">
+          E-mail Eliot
+        </Link>
+        <Link source="https://www.eliotlash.com/">
+          Eliot Lash's website
+        </Link>
         <Link source="https://chrisperko.net/support-me">
-          Support The Developer
+          Chris Perko's website
         </Link>
       </Section>
     </Page>
