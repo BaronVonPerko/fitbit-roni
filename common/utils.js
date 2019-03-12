@@ -55,3 +55,16 @@ export function nameOfMonth(i) {
       return "DEC";
   }
 }
+
+/**
+ * Maps value from one range to another
+ * @param value
+ * @param istart
+ * @param istop
+ * @param ostart
+ * @param ostop
+ * @returns {*}
+ */
+export function mapNumber(value, istart, istop, ostart, ostop) {
+  return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
+}

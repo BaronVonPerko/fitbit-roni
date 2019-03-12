@@ -13,11 +13,11 @@
 }
 
 .label-lg {
-  font-size: 90;
+  font-size: 80;
 }
 
 #clock {
-  text-anchor: middle;
+  /*text-anchor: middle;*/
 }
 
 image {
