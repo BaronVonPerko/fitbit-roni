@@ -61,7 +61,7 @@ export default class Clock {
       // Print the date
       const date = new Date();
       const dayOfWeek = util.dayOfWeek(date.getDay());
-      const month = date.getMonth();
+      const month = date.getMonth() + 1;
       const day = date.getDate();
       const year = date.getFullYear();
       const dateFormatObject = fileStore.getValue(KEY_DATE_FORMAT);
