@@ -1,13 +1,25 @@
+import { APP_NAME, DATE_FORMATS } from '../common/constants';
+
 function mySettings(props) {
   return (
     <Page>
       <Section
         title={
           <Text bold align="center">
-            Roni Settings
+            {`${APP_NAME} Settings`}
           </Text>
         }
       >
+        <Toggle
+          settingsKey="displaySeconds"
+          label="Display Seconds"
+        />
+        <Select
+          label="Date Format"
+          settingsKey="dateFormat"
+          options={DATE_FORMATS.map(name => ({ name }))}
+        />
+        <Text>UI Color</Text>
         <ColorSelect
           settingsKey="color"
           colors={[
@@ -35,7 +47,16 @@ function mySettings(props) {
       </Section>
       <Section>
         <Link source="https://chrisperko.net/support-me">
-          Support The Developer
+          Support Me
+        </Link>
+      </Section>
+      <Section>
+        <Text>Contributors:</Text>
+        <Link source="https://www.chrisperko.net">
+          Chris Perko
+        </Link>
+        <Link source="https://www.eliotlash.com/">
+          Eliot Lash
         </Link>
       </Section>
     </Page>
