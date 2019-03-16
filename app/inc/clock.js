@@ -21,13 +21,8 @@ export default class Clock {
   }
 
   setDisplaySeconds(displaySeconds) {
-    const granularity = displaySeconds ? 'seconds' : 'minutes';
-    clock.granularity = granularity;
-    if (displaySeconds) {
-      this.txtClockSec.style.opacity = 1;
-    } else {
-      this.txtClockSec.style.opacity = 0;
-    }
+    clock.granularity = displaySeconds ? 'seconds' : 'minutes';
+    this.txtClockSec.style.opacity = displaySeconds ? 1 : 0;
   }
 
   init(fileStore) {
