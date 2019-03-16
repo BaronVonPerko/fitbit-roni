@@ -4,7 +4,7 @@
       <image id="battery_img" x="3%" y="16" class="colorConfigurable" href="icons/battery_solid_24px.png" />
       <text id="battery" x="3%+32" y="40" class="label" />
 
-      <arc id="steps_gauge" y="7" class="colorConfigurable" width="45" height="45" arc-width="6" start-angle="0" sweep-angle="360" />
+      <arc id="steps_gauge" y="7" class="colorConfigurable" width="45" height="45" arc-width="3" start-angle="0" sweep-angle="360" />
       <image id="steps_img" x="0" y="16" class="colorConfigurable" href="icons/stat_steps_solid_24px.png" />
       <text id="steps" x="97%" y="40" class="label" />
 
@@ -13,7 +13,7 @@
 
       <line x1="10" y1="65" x2="100%-10" y2="65" class="colorConfigurable" stroke-width="1" />
 
-      <text id="clock" class="label label-lg" x="10%" y="170" />
+      <text id="clock" class="label label-lg" x="45%" y="170" />
       <text id="clockSec" class="label label-sm" x="60%" y="137" />
       <text id="clockAMPM" class="label label-sm" x="80%" y="170" />
 

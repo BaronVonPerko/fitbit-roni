@@ -4,9 +4,9 @@
     "@fitbit/sdk-cli": "^1.5.0"
   },
   "fitbit": {
-    "appUUID": "aabcd3a6-9b28-4278-814e-6b57afefe6ec",
+    "appUUID": "19a118e0-3070-4f00-b76b-345d02853c70",
     "appType": "clockface",
-    "appDisplayName": "RoniN",
+    "appDisplayName": "Roni",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
     "requestedPermissions": [
@@ -19,7 +19,7 @@
     ],
     "i18n": {
       "en": {
-        "name": "RoniN"
+        "name": "Roni"
       }
     }
   },

@@ -6,10 +6,9 @@ import FileStore from "./inc/fileStore";
 
 import analytics from "fitbit-google-analytics/app";
 
-//TODO change this
-// analytics.configure({
-//   tracking_id: "UA-26651291-17"
-// });
+analytics.configure({
+  tracking_id: "UA-26651291-17"
+});
 
 UI.instance.restore();
 
