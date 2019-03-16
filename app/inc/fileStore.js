@@ -12,8 +12,8 @@ export const VAL_UI_STATE_HEART = 'heart';
 
 const DEFAULT_MODEL = {
   [KEY_COLOR]: 'magenta',
-  [KEY_DISPLAY_SECONDS]: true,
-  [KEY_DATE_FORMAT]: { selected: 0 },
+  [KEY_DISPLAY_SECONDS]: false,
+  [KEY_DATE_FORMAT]: { selected: 2 },
   [KEY_UI_STATE]: VAL_UI_STATE_STEPS,
 };
 
