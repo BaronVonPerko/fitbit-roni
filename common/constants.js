@@ -1,4 +1,4 @@
-export const APP_NAME = 'RoniN';
+export const APP_NAME = 'Roni';
 
 export const DATE_FORMAT_MM_DD_YYYY = '1/28/2000';
 export const DATE_FORMAT_DD_MM_YYYY = '28/1/2000';
