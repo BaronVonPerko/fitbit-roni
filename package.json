@@ -2,7 +2,7 @@
   "version": "1.3.0",
   "devDependencies": {
     "@fitbit/sdk": "~3.1.0",
-    "@fitbit/sdk-cli": "^1.5.0"
+    "@fitbit/sdk-cli": "^1.6.0"
   },
   "fitbit": {
     "appUUID": "19a118e0-3070-4f00-b76b-345d02853c70",
@@ -16,7 +16,8 @@
       "access_internet"
     ],
     "buildTargets": [
-      "meson"
+      "meson",
+      "gemini"
     ],
     "i18n": {
       "en": {
@@ -28,5 +29,7 @@
     "build": "fitbit-build",
     "cli": "npx fitbit"
   },
-  "dependencies": {}
+  "dependencies": {
+    "fitbit-google-analytics": "^1.2.0"
+  }
 }
