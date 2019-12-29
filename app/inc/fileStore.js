@@ -1,20 +1,22 @@
 import * as fs from "fs";
 
-const FILENAME = 'roni.txt';
-const FILETYPE = 'json';
+const FILENAME = "roni.txt";
+const FILETYPE = "json";
 
-export const KEY_COLOR = 'color';
-export const KEY_DISPLAY_SECONDS = 'displaySeconds';
-export const KEY_DATE_FORMAT = 'dateFormat';
-export const KEY_UI_STATE = 'uiState';
-export const VAL_UI_STATE_STEPS = 'steps';
-export const VAL_UI_STATE_HEART = 'heart';
+export const KEY_COLOR = "color";
+export const KEY_DISPLAY_SECONDS = "displaySeconds";
+export const KEY_DISPLAY_BATTERY = "displayBattery";
+export const KEY_DATE_FORMAT = "dateFormat";
+export const KEY_UI_STATE = "uiState";
+export const VAL_UI_STATE_STEPS = "steps";
+export const VAL_UI_STATE_HEART = "heart";
 
 const DEFAULT_MODEL = {
-  [KEY_COLOR]: 'magenta',
+  [KEY_COLOR]: "magenta",
   [KEY_DISPLAY_SECONDS]: false,
+  [KEY_DISPLAY_BATTERY]: true,
   [KEY_DATE_FORMAT]: { selected: 2 },
-  [KEY_UI_STATE]: VAL_UI_STATE_STEPS,
+  [KEY_UI_STATE]: VAL_UI_STATE_STEPS
 };
 
 export default class FileStore {
@@ -24,7 +26,10 @@ export default class FileStore {
     try {
       this.model = fs.readFileSync(FILENAME, FILETYPE);
     } catch (e) {
-      console.error('FileStore encountered error on load, using default state.', e);
+      console.error(
+        "FileStore encountered error on load, using default state.",
+        e
+      );
       this.model = DEFAULT_MODEL;
       this.saveModel();
     }
@@ -47,7 +52,7 @@ export default class FileStore {
     try {
       fs.writeFileSync(FILENAME, this.model, FILETYPE);
     } catch (e) {
-      console.error('FileStore encountered an error when saving:', e);
+      console.error("FileStore encountered an error when saving:", e);
     }
   }
 }

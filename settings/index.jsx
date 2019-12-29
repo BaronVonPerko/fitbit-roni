@@ -1,4 +1,4 @@
-import { APP_NAME, DATE_FORMATS } from '../common/constants';
+import { APP_NAME, DATE_FORMATS } from "../common/constants";
 
 function mySettings(props) {
   return (
@@ -10,10 +10,8 @@ function mySettings(props) {
           </Text>
         }
       >
-        <Toggle
-          settingsKey="displaySeconds"
-          label="Display Seconds"
-        />
+        <Toggle settingsKey="displaySeconds" label="Display Seconds" />
+        <Toggle settingsKey="displayBattery" label="Display Battery" />
         <Select
           label="Date Format"
           settingsKey="dateFormat"
@@ -46,18 +44,12 @@ function mySettings(props) {
         </Text>
       </Section>
       <Section>
-        <Link source="https://chrisperko.net/support-me">
-          Support Me
-        </Link>
+        <Link source="https://chrisperko.net/support-me">Support Me</Link>
       </Section>
       <Section>
         <Text>Contributors:</Text>
-        <Link source="https://www.chrisperko.net">
-          Chris Perko
-        </Link>
-        <Link source="https://www.eliotlash.com/">
-          Eliot Lash
-        </Link>
+        <Link source="https://www.chrisperko.net">Chris Perko</Link>
+        <Link source="https://www.eliotlash.com/">Eliot Lash</Link>
       </Section>
     </Page>
   );
