@@ -12,3 +12,12 @@ export const DATE_FORMATS = [
   DATE_FORMAT_DD_MM_YYYY,
   DATE_FORMAT_MON_DD,
 ];
+
+
+export const CLOCK_SIZE_NORMAL = 'Normal';
+export const CLOCK_SIZE_LARGE = 'Large';
+
+export const CLOCK_SIZES = [
+  CLOCK_SIZE_NORMAL,
+  CLOCK_SIZE_LARGE,
+];

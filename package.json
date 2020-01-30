@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.7.0",
   "devDependencies": {
     "@fitbit/sdk": "^4.0.2",
     "@fitbit/sdk-cli": "^1.7.1"

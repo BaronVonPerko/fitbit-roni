@@ -1,6 +1,6 @@
 import * as messaging from "messaging";
 
-import FileStore, { KEY_COLOR, KEY_DISPLAY_SECONDS } from "./fileStore";
+import FileStore, { KEY_COLOR, KEY_DISPLAY_SECONDS, KEY_CLOCK_SIZE } from "./fileStore";
 import UI from "./ui";
 import Clock from './clock';
 
@@ -34,6 +34,9 @@ export default class Messaging {
           break;
         } case KEY_DISPLAY_SECONDS: {
           Clock.instance.setDisplaySeconds(data);
+          break;
+        } case KEY_CLOCK_SIZE: {
+          Clock.instance.setClockSize(data);
           break;
         }
       }

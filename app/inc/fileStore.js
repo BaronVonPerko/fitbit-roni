@@ -10,13 +10,15 @@ export const KEY_DATE_FORMAT = "dateFormat";
 export const KEY_UI_STATE = "uiState";
 export const VAL_UI_STATE_STEPS = "steps";
 export const VAL_UI_STATE_HEART = "heart";
+export const KEY_CLOCK_SIZE = "clockSize";
 
 const DEFAULT_MODEL = {
   [KEY_COLOR]: "magenta",
   [KEY_DISPLAY_SECONDS]: false,
   [KEY_DISPLAY_BATTERY]: true,
   [KEY_DATE_FORMAT]: { selected: 2 },
-  [KEY_UI_STATE]: VAL_UI_STATE_STEPS
+  [KEY_UI_STATE]: VAL_UI_STATE_STEPS,
+  [KEY_CLOCK_SIZE]: { selected: 0 },
 };
 
 export default class FileStore {

@@ -1,4 +1,4 @@
-import { APP_NAME, DATE_FORMATS } from "../common/constants";
+import { APP_NAME, DATE_FORMATS, CLOCK_SIZES } from "../common/constants";
 
 function mySettings(props) {
   return (
@@ -17,6 +17,10 @@ function mySettings(props) {
           settingsKey="dateFormat"
           options={DATE_FORMATS.map(name => ({ name }))}
         />
+        <Select
+          label="Clock Size"
+          settingsKey="clockSize"
+          options={CLOCK_SIZES.map(name => ({ name }))} />
         <Text>UI Color</Text>
         <ColorSelect
           settingsKey="color"

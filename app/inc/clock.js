@@ -1,14 +1,16 @@
 import clock from "clock";
 import { preferences } from "user-settings";
-import { today } from "user-activity";
 import * as util from "../../common/utils";
 import document from "document";
-import { KEY_DISPLAY_SECONDS, KEY_DATE_FORMAT } from './fileStore';
+import { KEY_DISPLAY_SECONDS, KEY_DATE_FORMAT, KEY_CLOCK_SIZE } from './fileStore';
 import {
   DATE_FORMATS,
   DATE_FORMAT_MM_DD_YYYY,
   DATE_FORMAT_DD_MM_YYYY,
   DATE_FORMAT_MON_DD,
+  CLOCK_SIZES,
+  CLOCK_SIZE_NORMAL,
+  CLOCK_SIZE_LARGE
 } from '../../common/constants';
 
 export default class Clock {
@@ -25,8 +27,21 @@ export default class Clock {
     this.txtClockSec.style.opacity = displaySeconds ? 1 : 0;
   }
 
+  setClockSize(clockSizeObject) {
+    const clockSize = CLOCK_SIZES[clockSizeObject.selected];
+    switch (clockSize) {
+      case CLOCK_SIZE_NORMAL:
+        this.txtClock.style.fontSize = 80;
+        break;
+      case CLOCK_SIZE_LARGE:
+        this.txtClock.style.fontSize = 100;
+        break;
+    }
+  }
+
   init(fileStore) {
     this.setDisplaySeconds(fileStore.getValue(KEY_DISPLAY_SECONDS));
+    this.setClockSize(fileStore.getValue(KEY_CLOCK_SIZE));
 
     // Update the clock / date every tick
     clock.ontick = (evt) => {
@@ -46,7 +61,7 @@ export default class Clock {
       // Print the clock
       const mins = util.zeroPad(today.getMinutes());
       const secs = util.zeroPad(today.getSeconds());
-      const sideTextX = hours.toString().length > 1 ? 240 : 220;
+      const sideTextX = hours.toString().length > 1 ? 244 : 220;
       this.txtClock.text = `${hours}:${mins}`;
       this.txtClockSec.text = secs;
       this.txtAMPM.text = `${ampm}`;
@@ -62,7 +77,7 @@ export default class Clock {
       const dateFormatObject = fileStore.getValue(KEY_DATE_FORMAT);
       const dateFormat = DATE_FORMATS[dateFormatObject.selected];
       let dateString;
-      switch(dateFormat) {
+      switch (dateFormat) {
         default: {
           console.error(`Unknown date format ${dateFormat}`);
           // Fallthrough to default format
