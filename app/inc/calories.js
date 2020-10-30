@@ -15,10 +15,10 @@ export default class Calories {
     const calories = today.local.calories.toString();
     const goalCompletionNormal = today.local.calories / goals.calories;
     const gaugeSweepAngle = util.mapNumber(goalCompletionNormal, 0, 1, 0, 360);
-    const stepIconX = this.root.width - 40 - (18 * calories.length);
+    const calsIconX = this.root.width - 40 - (18 * calories.length);
     this.txtCals.text = calories;
-    this.imgCals.x = stepIconX;
-    this.gaugeCals.x = stepIconX - (this.imgCals.width / 2) + 2;
+    this.imgCals.x = calsIconX;
+    this.gaugeCals.x = calsIconX - (this.imgCals.width / 2) + 2;
     this.gaugeCals.sweepAngle = gaugeSweepAngle;
   }
 
