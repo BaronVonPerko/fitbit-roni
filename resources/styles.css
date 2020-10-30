@@ -31,6 +31,11 @@ image {
   text-anchor: end;
 }
 
+#cals {
+  font-size: 30;
+  text-anchor: end;
+}
+
 #battery {
   font-size: 30;
   text-anchor: start;

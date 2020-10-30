@@ -48,9 +48,9 @@ function mySettings(props) {
                 <Text>
                     To toggle between the following health metrics, simply tap anywhere on your watch!
                 </Text>
-                <Toggle settingsKey="displaySteps" label="Display Steps"/>
-                <Toggle settingsKey="displayHeartRate" label="Display Heart Rate"/>
-                <Toggle settingsKey="displayCalories" label="Display Calories"/>
+                <Toggle settingsKey="steps" label="Display Steps"/>
+                <Toggle settingsKey="heart" label="Display Heart Rate"/>
+                <Toggle settingsKey="cals" label="Display Calories"/>
 
             </Section>
 
