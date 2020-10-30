@@ -10,6 +10,7 @@ export const KEY_DATE_FORMAT = "dateFormat";
 export const KEY_UI_STATE = "uiState";
 export const VAL_UI_STATE_STEPS = "steps";
 export const VAL_UI_STATE_HEART = "heart";
+export const VAL_UI_STATE_CALS = "cals";
 export const KEY_CLOCK_SIZE = "clockSize";
 
 const DEFAULT_MODEL = {
