@@ -47,9 +47,6 @@ export default class UI {
         enabledStates.push(state);
       }
     });
-    // if (enabledStates.length === 0) { // if none are enabled, none will show
-    //   this.setState(null, true);
-    // }
 
     // get the index of the next enabled state
     let nextStateIndex = 0;
@@ -69,6 +66,7 @@ export default class UI {
   }
 
   setState(newState, save) {
+
     switch (newState) {
       case VAL_UI_STATE_STEPS:
         this.steps.start();
@@ -84,11 +82,14 @@ export default class UI {
         this.steps.stop();
         this.heartrate.stop();
         this.calories.start();
-      // case null: case undefined:
-      //   this.steps.stop();
-      //   this.heartrate.stop();
-      //   this.calories.stop();
     }
+
+    if (newState === undefined) {
+      this.steps.stop();
+      this.heartrate.stop();
+      this.calories.stop();
+    }
+
     if (save) {
       FileStore.instance.setValue(KEY_UI_STATE, newState);
     }
