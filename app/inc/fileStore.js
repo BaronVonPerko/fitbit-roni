@@ -36,6 +36,10 @@ export default class FileStore {
       this.model = DEFAULT_MODEL;
       this.saveModel();
     }
+
+    if (this.getValue(VAL_UI_STATE_STEPS) === undefined) {
+      this.saveDefaultMetrics();
+    }
   }
 
   getValue(key) {
@@ -57,5 +61,11 @@ export default class FileStore {
     } catch (e) {
       console.error("FileStore encountered an error when saving:", e);
     }
+  }
+
+  saveDefaultMetrics() {
+    this.setValue(VAL_UI_STATE_STEPS, true);
+    this.setValue(VAL_UI_STATE_HEART, true);
+    this.setValue(VAL_UI_STATE_CALS, true);
   }
 }
