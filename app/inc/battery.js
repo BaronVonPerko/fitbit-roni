@@ -1,7 +1,7 @@
 import document from "document";
 import { battery, charger } from "power";
-import { KEY_DISPLAY_BATTERY } from "./fileStore";
-import FileStore, { KEY_DISPLAY_BATTERY } from "./fileStore";
+import FileStore from "./fileStore";
+import {KEY_DISPLAY_BATTERY} from "../../common/constants";
 
 export default class Battery {
   constructor() {

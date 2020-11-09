@@ -2,6 +2,7 @@ import * as messaging from "messaging";
 import { settingsStorage } from "settings";
 
 import "fitbit-google-analytics/companion";
+import {DEFAULT_MODEL} from "../common/constants";
 
 // Message socket opens
 messaging.peerSocket.onopen = () => {
@@ -40,13 +41,15 @@ function restoreSettings() {
   }
 }
 
-/**
- * todo: need to refactor the DEFAULT_MODEL in fileStore
- * as well as the constants to be reusable in both the
- * watch face and the companion (here)
- */
 function restoreDefaults() {
-  settingsStorage.setItem('displayBattery', true);
+  console.log('Restoring default values for Companion');
+
+  const keys = Object.keys(DEFAULT_MODEL)
+
+  keys.forEach(key => {
+    console.log(`${key} | ${DEFAULT_MODEL[key]}`);
+    settingsStorage.setItem(key, DEFAULT_MODEL[key]);
+  })
 }
 
 // Send data to device using Messaging API

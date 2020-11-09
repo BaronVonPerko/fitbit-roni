@@ -1,8 +1,9 @@
 import * as messaging from "messaging";
 
-import FileStore, { KEY_COLOR, KEY_DISPLAY_SECONDS, KEY_CLOCK_SIZE } from "./fileStore";
+import FileStore from "./fileStore";
 import UI from "./ui";
 import Clock from './clock';
+import {KEY_CLOCK_SIZE, KEY_COLOR, KEY_DISPLAY_SECONDS} from "../../common/constants";
 
 export default class Messaging {
   static run() {

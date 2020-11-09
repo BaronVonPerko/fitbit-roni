@@ -2,13 +2,14 @@ import document from 'document';
 import HeartRate from './heartrate';
 import Steps from './steps';
 import Calories from './calories';
-import FileStore, {
+import FileStore from './fileStore';
+import {
   KEY_COLOR,
   KEY_UI_STATE,
-  KEY_UI_STATE_STEPS,
+  KEY_UI_STATE_CALS,
   KEY_UI_STATE_HEART,
-  KEY_UI_STATE_CALS
-} from './fileStore';
+  KEY_UI_STATE_STEPS
+} from "../../common/constants";
 
 export default class UI {
   static instance = new UI();
