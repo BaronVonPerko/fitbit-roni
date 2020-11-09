@@ -8,9 +8,9 @@ export const KEY_DISPLAY_SECONDS = "displaySeconds";
 export const KEY_DISPLAY_BATTERY = "displayBattery";
 export const KEY_DATE_FORMAT = "dateFormat";
 export const KEY_UI_STATE = "uiState";
-export const VAL_UI_STATE_STEPS = "steps";
-export const VAL_UI_STATE_HEART = "heart";
-export const VAL_UI_STATE_CALS = "cals";
+export const KEY_UI_STATE_STEPS = "steps";
+export const KEY_UI_STATE_HEART = "heart";
+export const KEY_UI_STATE_CALS = "cals";
 export const KEY_CLOCK_SIZE = "clockSize";
 
 const DEFAULT_MODEL = {
@@ -18,8 +18,11 @@ const DEFAULT_MODEL = {
   [KEY_DISPLAY_SECONDS]: false,
   [KEY_DISPLAY_BATTERY]: true,
   [KEY_DATE_FORMAT]: { selected: 2 },
-  [KEY_UI_STATE]: VAL_UI_STATE_STEPS,
+  [KEY_UI_STATE]: KEY_UI_STATE_STEPS,
   [KEY_CLOCK_SIZE]: { selected: 0 },
+  [KEY_UI_STATE_STEPS]: true,
+  [KEY_UI_STATE_HEART]: true,
+  [KEY_UI_STATE_CALS]: true
 };
 
 export default class FileStore {
@@ -35,10 +38,6 @@ export default class FileStore {
       );
       this.model = DEFAULT_MODEL;
       this.saveModel();
-    }
-
-    if (this.getValue(VAL_UI_STATE_STEPS) === undefined) {
-      this.saveDefaultMetrics();
     }
   }
 
@@ -63,9 +62,4 @@ export default class FileStore {
     }
   }
 
-  saveDefaultMetrics() {
-    this.setValue(VAL_UI_STATE_STEPS, true);
-    this.setValue(VAL_UI_STATE_HEART, true);
-    this.setValue(VAL_UI_STATE_CALS, true);
-  }
 }

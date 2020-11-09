@@ -5,9 +5,9 @@ import Calories from './calories';
 import FileStore, {
   KEY_COLOR,
   KEY_UI_STATE,
-  VAL_UI_STATE_STEPS,
-  VAL_UI_STATE_HEART,
-  VAL_UI_STATE_CALS
+  KEY_UI_STATE_STEPS,
+  KEY_UI_STATE_HEART,
+  KEY_UI_STATE_CALS
 } from './fileStore';
 
 export default class UI {
@@ -38,7 +38,7 @@ export default class UI {
   onClick() {
 
     const currentState = FileStore.instance.getValue(KEY_UI_STATE);
-    const availableStates = [VAL_UI_STATE_STEPS, VAL_UI_STATE_HEART, VAL_UI_STATE_CALS];
+    const availableStates = [KEY_UI_STATE_STEPS, KEY_UI_STATE_HEART, KEY_UI_STATE_CALS];
     let enabledStates = [];
 
     // create an array of states that the user has enabled
@@ -68,17 +68,17 @@ export default class UI {
   setState(newState, save) {
 
     switch (newState) {
-      case VAL_UI_STATE_STEPS:
+      case KEY_UI_STATE_STEPS:
         this.steps.start();
         this.heartrate.stop();
         this.calories.stop();
         break;
-      case VAL_UI_STATE_HEART:
+      case KEY_UI_STATE_HEART:
         this.steps.stop();
         this.heartrate.start();
         this.calories.stop();
         break;
-      case VAL_UI_STATE_CALS:
+      case KEY_UI_STATE_CALS:
         this.steps.stop();
         this.heartrate.stop();
         this.calories.start();
