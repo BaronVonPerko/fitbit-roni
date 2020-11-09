@@ -24,6 +24,10 @@ settingsStorage.onchange = evt => {
 
 // Restore any previously saved settings and send to the device
 function restoreSettings() {
+  if (settingsStorage.length === 0) {
+    restoreDefaults();
+  }
+
   for (let index = 0; index < settingsStorage.length; index++) {
     let key = settingsStorage.key(index);
     if (key) {
@@ -34,6 +38,15 @@ function restoreSettings() {
       sendVal(data);
     }
   }
+}
+
+/**
+ * todo: need to refactor the DEFAULT_MODEL in fileStore
+ * as well as the constants to be reusable in both the
+ * watch face and the companion (here)
+ */
+function restoreDefaults() {
+  settingsStorage.setItem('displayBattery', true);
 }
 
 // Send data to device using Messaging API
