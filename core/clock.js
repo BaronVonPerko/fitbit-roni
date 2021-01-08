@@ -1,6 +1,6 @@
 import clock from "clock";
 import { preferences } from "user-settings";
-import * as util from "../../common/utils";
+import * as util from "./common/utils";
 import document from "document";
 import {
   DATE_FORMATS,
@@ -10,7 +10,7 @@ import {
   CLOCK_SIZES,
   CLOCK_SIZE_NORMAL,
   CLOCK_SIZE_LARGE, KEY_CLOCK_SIZE, KEY_DATE_FORMAT, KEY_DISPLAY_SECONDS
-} from '../../common/constants';
+} from './common/constants';
 
 export default class Clock {
 

@@ -3,7 +3,7 @@ import * as messaging from "messaging";
 import FileStore from "./fileStore";
 import UI from "./ui";
 import Clock from './clock';
-import {KEY_CLOCK_SIZE, KEY_COLOR, KEY_DISPLAY_SECONDS} from "../../common/constants";
+import {KEY_CLOCK_SIZE, KEY_COLOR, KEY_DISPLAY_SECONDS} from "./common/constants";
 
 export default class Messaging {
   static run() {
