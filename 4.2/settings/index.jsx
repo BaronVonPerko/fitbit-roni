@@ -1,4 +1,4 @@
-import {APP_NAME, DATE_FORMATS, CLOCK_SIZES} from "../common/constants";
+import {APP_NAME, DATE_FORMATS, CLOCK_SIZES} from "../../core/common/constants";
 
 function mySettings(props) {
     return (

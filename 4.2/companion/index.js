@@ -2,7 +2,7 @@ import * as messaging from "messaging";
 import { settingsStorage } from "settings";
 
 import "fitbit-google-analytics/companion";
-import {DEFAULT_MODEL} from "../common/constants";
+import {DEFAULT_MODEL} from "../../core/common/constants";
 
 // Message socket opens
 messaging.peerSocket.onopen = () => {
