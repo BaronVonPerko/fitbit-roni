@@ -1,0 +1,36 @@
+<svg class="background" id="root" >
+    <rect id="tapzone" x="0" y="0" width="100%" height="100%" pointer-events="visible" >
+
+      <image id="battery_img" x="3%" y="16" class="colorConfigurable" href="icons/battery_solid_24px.png" />
+      <text id="battery" x="3%+32" y="40" class="label" />
+
+      <arc id="steps_gauge" y="7" class="colorConfigurable" width="45" height="45" arc-width="3" start-angle="0" sweep-angle="360" />
+      <image id="steps_img" x="0" y="16" class="colorConfigurable" href="icons/stat_steps_solid_24px.png" />
+      <text id="steps" x="97%" y="40" class="label" />
+
+      <arc id="cals_gauge" y="7" class="colorConfigurable" width="45" height="45" arc-width="3" start-angle="0" sweep-angle="360" />
+      <image id="cals_img" x="0" y="16" class="colorConfigurable" href="icons/stat_cals_solid_24px.png" />
+      <text id="cals" x="97%" y="40" class="label" />
+
+      <image id="heartrate_img" x="73%" y="16" class="colorConfigurable" href="icons/stat_hr_open_24px.png" />
+      <text id="heartrate" x="97%" y="40" class="label" />
+
+      <line x1="10" y1="65" x2="100%-10" y2="65" class="colorConfigurable" stroke-width="1" />
+
+      <text id="clock" class="label" x="45%" y="170" />
+      <text id="clockSec" class="label label-sm" y="137" />
+      <text id="clockAMPM" class="label label-sm" x="80%" y="170" />
+
+      <line x1="10" y1="205" x2="100%-10" y2="205" class="colorConfigurable" stroke-width="1" />
+
+      <text id="date" x="50%" y="85%" class="label" />
+
+      <rect id="version_notes_overlay" fill="black" fill-opacity="0.8" x="0" y="0" width="100%" height="100%" visibility="hidden" />
+
+      <use id="version_notes_text" href="#mixed-text-center-top" height="100%" fill="deepskyblue" visibility="hidden">
+        <set href="#header/text" attributeName="text-buffer" to="What's New"/>
+        <set href="#copy/text" attributeName="text-buffer"
+           to="New red and green holiday colors have been added!"/>
+      </use>
+  </rect>
+</svg>

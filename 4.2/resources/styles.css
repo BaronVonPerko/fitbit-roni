@@ -1,0 +1,46 @@
+.background {
+  viewport-fill: black;
+}
+
+.label {
+  font-family: System-Light;
+  text-length: 32;
+  fill: white;
+}
+
+.label-sm {
+  font-size: 30;
+}
+
+#clock {
+  text-anchor: middle;
+}
+
+image {
+  width: 24;
+  height: 24;
+}
+
+#steps {
+  font-size: 30;
+  text-anchor: end;
+}
+
+#heartrate {
+  font-size: 30;
+  text-anchor: end;
+}
+
+#cals {
+  font-size: 30;
+  text-anchor: end;
+}
+
+#battery {
+  font-size: 30;
+  text-anchor: start;
+}
+
+#date {
+  text-anchor: middle;
+}
