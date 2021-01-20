@@ -1,71 +1,71 @@
 .background
 {
-	viewport-fill: black;
+    viewport-fill: black;
 }
 .label
 {
-	font-family: System-Light;
-	text-length: 32;
-	fill: white;
+    font-family: System-Light;
+    text-length: 32;
+    fill: white;
 }
 .label-sm
 {
-	font-family: System-Light;
-	text-length: 32;
-	font-size: 30;
-	fill: white;
-	x: 120%;
+    font-family: System-Light;
+    text-length: 32;
+    font-size: 30;
+    fill: white;
+    x: 120%;
 }
 line
 {
-	x1: 5%;
-	x2: 100%-10%;
-	stroke-width: 1;
+    x1: 5%;
+    x2: 100%-10%;
+    stroke-width: 1;
 }
 image
 {
-	width: 24;
-	height: 24;
-	y: 16;
+    width: 24;
+    height: 24;
+    y: 16;
 }
 arc
 {
-	y: 7;
-	width: 45;
-	height: 45;
-	arc-width: 3;
-	start-angle: 0;
-	sweep-angle: 360;
+    y: 7;
+    width: 45;
+    height: 45;
+    arc-width: 3;
+    start-angle: 0;
+    sweep-angle: 360;
 }
 #battery
 {
-	font-size: 30;
-	text-anchor: start;
+    font-size: 30;
+    text-anchor: start;
 }
 #steps
 {
-	font-size: 30;
-	text-anchor: end;
+    font-size: 30;
+    text-anchor: end;
 }
 #heartrate
 {
-	font-size: 30;
-	text-anchor: end;
+    font-size: 30;
+    text-anchor: end;
 }
 #cals
 {
-	font-size: 30;
-	text-anchor: end;
+    font-size: 30;
+    text-anchor: end;
 }
 #clock
 {
-	text-anchor: middle;
-	x: 50%;
-	y: 55%;
+    text-anchor: middle;
+    x: 50%;
+    y: 55%;
 }
 #date
 {
-	text-anchor: middle;
-	x: 50%;
-	y: 90%;
+    text-anchor: middle;
+    x: 50%;
+    y: 90%;
 }

@@ -8,17 +8,17 @@ import FileStore from "../../inc/fileStore";
 
 /*analytics.configure(
 {
-	tracking_id: "UA-26651291-17"
+  tracking_id: "UA-26651291-17"
 });*/
 
 import
 {
-	me as device
+  me as device
 } from "device";
 if (!device.screen) device.screen =
 {
-	width: 348,
-	height: 250
+  width: 348,
+  height: 250
 };
 
 UI.instance.restore();
