@@ -4,7 +4,7 @@ import
 	DEFAULT_MODEL,
 	FILENAME,
 	FILETYPE
-} from "../../common/constants";
+} from "./common/constants";
 
 export default class FileStore
 {

@@ -8,7 +8,7 @@ import FileStore from "./fileStore";
 import
 {
 	KEY_DISPLAY_BATTERY
-} from "../../common/constants";
+} from "./common/constants";
 
 export default class Battery
 {

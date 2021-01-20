@@ -10,7 +10,7 @@ import
 	KEY_UI_STATE_CALS,
 	KEY_UI_STATE_HEART,
 	KEY_UI_STATE_STEPS
-} from "../../common/constants";
+} from "./common/constants"
 
 export default class UI
 {

@@ -3,7 +3,7 @@ import
 {
 	preferences
 } from "user-settings";
-import * as util from "../../common/utils";
+import * as util from "./common/utils";
 import document from "document";
 import
 {
