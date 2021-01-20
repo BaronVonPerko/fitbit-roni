@@ -12,7 +12,7 @@
       "access_activity",
       "access_heart_rate",
       "access_internet",
-	  "run_background"
+      "run_background"
     ],
     "buildTargets": [
       "atlas",
