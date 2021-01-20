@@ -15,11 +15,12 @@ import
 {
   me as device
 } from "device";
+
 if (!device.screen) device.screen =
-{
-  width: 348,
-  height: 250
-};
+  {
+    width: 348,
+    height: 250
+  };
 
 UI.instance.restore();
 

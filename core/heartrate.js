@@ -4,10 +4,8 @@ import
   HeartRateSensor
 } from "heart-rate";
 
-export default class HeartRate
-{
-  constructor()
-  {
+export default class HeartRate {
+  constructor() {
     this.hrm = new HeartRateSensor();
 
     this.txtHeartRate = document.getElementById('heartrate');
@@ -16,31 +14,26 @@ export default class HeartRate
     this.txtHeartRate.text = "--";
   }
 
-  show()
-  {
+  show() {
     this.txtHeartRate.style.opacity = 1;
     this.imgHeartRate.style.opacity = 1;
   }
 
-  hide()
-  {
+  hide() {
     this.txtHeartRate.style.opacity = 0;
     this.imgHeartRate.style.opacity = 0;
   }
 
-  start()
-  {
+  start() {
     this.show();
     this.hrm.start();
 
-    this.hrm.onreading = () =>
-    {
+    this.hrm.onreading = () => {
       this.txtHeartRate.text = this.hrm.heartRate;
     }
   }
 
-  stop()
-  {
+  stop() {
     this.hrm.stop();
     this.hide();
   }

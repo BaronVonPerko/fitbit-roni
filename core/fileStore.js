@@ -6,50 +6,36 @@ import
   FILETYPE
 } from "./common/constants";
 
-export default class FileStore
-{
+export default class FileStore {
   static instance = new FileStore();
 
-  constructor()
-  {
-    try
-    {
+  constructor() {
+    try {
       this.model = fs.readFileSync(FILENAME, FILETYPE);
-    }
-    catch (e)
-    {
+    } catch (e) {
       console.error("FileStore encountered error on load, using default state.", e);
       this.model = DEFAULT_MODEL;
       this.saveModel();
     }
   }
 
-  getValue(key)
-  {
-    if (this.model[key] === undefined)
-    {
+  getValue(key) {
+    if (this.model[key] === undefined) {
       return DEFAULT_MODEL[key];
-    }
-    else
-    {
+    } else {
       return this.model[key];
     }
   }
 
-  setValue(key, value)
-  {
+  setValue(key, value) {
     this.model[key] = value;
     this.saveModel();
   }
 
-  saveModel()
-  {
-    try
-    {
+  saveModel() {
+    try {
       fs.writeFileSync(FILENAME, this.model, FILETYPE);
-    }
-    catch (e)
-    {
+    } catch (e) {
       console.error("FileStore encountered an error when saving:", e);
     }
   }

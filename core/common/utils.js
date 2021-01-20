@@ -1,18 +1,14 @@
 // Add zero in front of numbers < 10
-export function zeroPad(i)
-{
-  if (i < 10)
-  {
+export function zeroPad(i) {
+  if (i < 10) {
     i = "0" + i;
   }
   return i;
 }
 
 // Convert the day of week to human readable
-export function dayOfWeek(i)
-{
-  switch(i)
-  {
+export function dayOfWeek(i) {
+  switch (i) {
     case 0:
       return "SUN";
     case 1:
@@ -27,14 +23,12 @@ export function dayOfWeek(i)
       return "FRI";
     case 6:
       return "SAT";
-    }
+  }
 }
 
 // Convert day of month to human readable
-export function nameOfMonth(i)
-{
-  switch(i)
-  {
+export function nameOfMonth(i) {
+  switch (i) {
     case 0:
       return "JAN";
     case 1:
@@ -59,7 +53,7 @@ export function nameOfMonth(i)
       return "NOV";
     case 11:
       return "DEC";
-    }
+  }
 }
 
 /**
@@ -71,7 +65,6 @@ export function nameOfMonth(i)
  * @param ostop
  * @returns {*}
  */
-export function mapNumber(value, istart, istop, ostart, ostop)
-{
+export function mapNumber(value, istart, istop, ostart, ostop) {
   return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
 }

@@ -6,18 +6,15 @@ import
 } from "user-activity";
 import * as util from "./common/utils";
 
-export default class Steps
-{
-  constructor()
-  {
+export default class Steps {
+  constructor() {
     this.txtSteps = document.getElementById("steps");
     this.imgSteps = document.getElementById("steps_img");
     this.gaugeSteps = document.getElementById("steps_gauge");
     this.root = document.getElementById('root');
   }
 
-  update()
-  {
+  update() {
     const steps = today.local.steps.toString();
     const goalCompletionNormal = today.local.steps / goals.steps;
     const gaugeSweepAngle = util.mapNumber(goalCompletionNormal, 0, 1, 0, 360);
@@ -28,30 +25,26 @@ export default class Steps
     this.gaugeSteps.sweepAngle = gaugeSweepAngle;
   }
 
-  hide()
-  {
+  hide() {
     this.txtSteps.style.opacity = 0;
     this.imgSteps.style.opacity = 0;
     this.gaugeSteps.style.opacity = 0;
   }
 
-  show()
-  {
+  show() {
     this.txtSteps.style.opacity = 1;
     this.imgSteps.style.opacity = 1;
     this.gaugeSteps.style.opacity = 1;
   }
 
-  start()
-  {
+  start() {
     this.update();
 
     this.interval = setInterval(() => this.update(), 2000);
     this.show();
   }
 
-  stop()
-  {
+  stop() {
     clearInterval(this.interval);
     this.interval = null;
     this.hide();

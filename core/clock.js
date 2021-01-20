@@ -20,27 +20,22 @@ import
   KEY_DISPLAY_SECONDS
 } from '../../common/constants';
 
-export default class Clock
-{
-  constructor()
-  {
+export default class Clock {
+  constructor() {
     this.txtClock = document.getElementById("clock");
     this.txtClockSec = document.getElementById("clockSec");
     this.txtAMPM = document.getElementById("clockAMPM");
     this.txtDate = document.getElementById("date");
   }
 
-  setDisplaySeconds(displaySeconds)
-  {
+  setDisplaySeconds(displaySeconds) {
     clock.granularity = displaySeconds ? 'seconds' : 'minutes';
     this.txtClockSec.style.opacity = displaySeconds ? 1 : 0;
   }
 
-  setClockSize(clockSizeObject)
-  {
+  setClockSize(clockSizeObject) {
     const clockSize = CLOCK_SIZES[clockSizeObject.selected];
-    switch (clockSize)
-    {
+    switch (clockSize) {
       case CLOCK_SIZE_NORMAL:
         this.txtClock.style.fontSize = 80;
         break;
@@ -50,26 +45,21 @@ export default class Clock
     }
   }
 
-  init(fileStore)
-  {
+  init(fileStore) {
     this.setDisplaySeconds(fileStore.getValue(KEY_DISPLAY_SECONDS));
     this.setClockSize(fileStore.getValue(KEY_CLOCK_SIZE));
 
     // Update the clock / date every tick
-    clock.ontick = (evt) =>
-    {
+    clock.ontick = (evt) => {
       const today = evt.date;
       let hours = today.getHours();
       let ampm = "";
 
-      if (preferences.clockDisplay === "12h")
-      {
+      if (preferences.clockDisplay === "12h") {
         // 12h format
         ampm = hours >= 12 ? "PM" : "AM";
         hours = hours % 12 || 12;
-      }
-      else
-      {
+      } else {
         // 24h format
         hours = util.zeroPad(hours);
       }
@@ -93,31 +83,25 @@ export default class Clock
       const dateFormatObject = fileStore.getValue(KEY_DATE_FORMAT);
       const dateFormat = DATE_FORMATS[dateFormatObject.selected];
       let dateString;
-      switch (dateFormat)
-      {
-        default:
-        {
+      switch (dateFormat) {
+        default: {
           console.error(`Unknown date format ${dateFormat}`);
           // Fallthrough to default format
         }
-        case DATE_FORMAT_MM_DD_YYYY:
-        {
+        case DATE_FORMAT_MM_DD_YYYY: {
           dateString = `${month}/${day}/${year}`;
           break;
         }
-        case DATE_FORMAT_DD_MM_YYYY:
-        {
+        case DATE_FORMAT_DD_MM_YYYY: {
           dateString = `${day}/${month}/${year}`;
           break;
         }
-        case DATE_FORMAT_MON_DD:
-        {
+        case DATE_FORMAT_MON_DD: {
           const monthName = util.nameOfMonth(date.getMonth());
           dateString = `${monthName} ${day}`;
           break;
         }
-        case DATE_FORMAT_DD_MON:
-        {
+        case DATE_FORMAT_DD_MON: {
           const monthName = util.nameOfMonth(date.getMonth());
           dateString = `${day} ${monthName}`;
           break;
@@ -129,8 +113,7 @@ export default class Clock
 
   static instance = new Clock();
 
-  static run(fileStore)
-  {
+  static run(fileStore) {
     Clock.instance.init(fileStore);
   }
 }

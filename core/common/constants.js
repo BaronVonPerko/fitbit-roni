@@ -8,20 +8,20 @@ export const DATE_FORMAT_DD_MON = '31 DEC';
 // If this is needed you should migrate or at least rotate the settings key.
 // See https://dev.fitbit.com/build/reference/settings-api/#select
 export const DATE_FORMATS =
-[
-  DATE_FORMAT_MM_DD_YYYY,
-  DATE_FORMAT_DD_MM_YYYY,
-  DATE_FORMAT_MON_DD,
-  DATE_FORMAT_DD_MON,
-];
+  [
+    DATE_FORMAT_MM_DD_YYYY,
+    DATE_FORMAT_DD_MM_YYYY,
+    DATE_FORMAT_MON_DD,
+    DATE_FORMAT_DD_MON,
+  ];
 
 export const CLOCK_SIZE_NORMAL = 'Normal';
 export const CLOCK_SIZE_LARGE = 'Large';
 export const CLOCK_SIZES =
-[
-  CLOCK_SIZE_NORMAL,
-  CLOCK_SIZE_LARGE,
-];
+  [
+    CLOCK_SIZE_NORMAL,
+    CLOCK_SIZE_LARGE,
+  ];
 
 export const FILENAME = "roni.txt";
 export const FILETYPE = "json";
@@ -36,14 +36,14 @@ export const KEY_UI_STATE_CALS = "cals";
 export const KEY_CLOCK_SIZE = "clockSize";
 
 export const DEFAULT_MODEL =
-{
-  [KEY_COLOR]: "magenta",
-  [KEY_DISPLAY_SECONDS]: false,
-  [KEY_DISPLAY_BATTERY]: true,
-  [KEY_DATE_FORMAT]: {selected: 2},
-  [KEY_UI_STATE]: KEY_UI_STATE_STEPS,
-  [KEY_CLOCK_SIZE]: {selected: 0},
-  [KEY_UI_STATE_STEPS]: true,
-  [KEY_UI_STATE_HEART]: true,
-  [KEY_UI_STATE_CALS]: true
-};
+  {
+    [KEY_COLOR]: "magenta",
+    [KEY_DISPLAY_SECONDS]: false,
+    [KEY_DISPLAY_BATTERY]: true,
+    [KEY_DATE_FORMAT]: {selected: 2},
+    [KEY_UI_STATE]: KEY_UI_STATE_STEPS,
+    [KEY_CLOCK_SIZE]: {selected: 0},
+    [KEY_UI_STATE_STEPS]: true,
+    [KEY_UI_STATE_HEART]: true,
+    [KEY_UI_STATE_CALS]: true
+  };
