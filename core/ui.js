@@ -53,7 +53,7 @@ export default class UI {
       nextStateIndex = 0;
     }
 
-    this.setState(enabledStates[nextStateIndex], true,);
+    this.setState(enabledStates[nextStateIndex], true);
   }
 
   setState(newState, save) {
