@@ -1,12 +1,8 @@
 import clock from "clock";
-import
-{
-  preferences
-} from "user-settings";
+import {preferences} from "user-settings";
 import * as util from "./common/utils";
 import document from "document";
-import
-{
+import {
   DATE_FORMATS,
   DATE_FORMAT_MM_DD_YYYY,
   DATE_FORMAT_DD_MM_YYYY,

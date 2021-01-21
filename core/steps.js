@@ -1,9 +1,5 @@
 import document from "document";
-import
-{
-  today,
-  goals
-} from "user-activity";
+import {today, goals} from "user-activity";
 import * as util from "./common/utils";
 
 export default class Steps {
