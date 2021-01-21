@@ -1,9 +1,8 @@
 import document from "document";
-import { today, goals } from "user-activity";
+import {today, goals} from "user-activity";
 import * as util from "./common/utils";
 
 export default class Steps {
-
   constructor() {
     this.txtSteps = document.getElementById("steps");
     this.imgSteps = document.getElementById("steps_img");
@@ -16,7 +15,7 @@ export default class Steps {
     const goalCompletionNormal = today.local.steps / goals.steps;
     const gaugeSweepAngle = util.mapNumber(goalCompletionNormal, 0, 1, 0, 360);
     const stepIconX = this.root.width - 40 - (18 * steps.length);
-    this.txtSteps.text = steps;
+    this.txtSteps.text = steps.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     this.imgSteps.x = stepIconX;
     this.gaugeSteps.x = stepIconX - (this.imgSteps.width / 2) + 2;
     this.gaugeSteps.sweepAngle = gaugeSweepAngle;
@@ -46,5 +45,4 @@ export default class Steps {
     this.interval = null;
     this.hide();
   }
-
 }

@@ -5,3 +5,5 @@ Chris Perko
 
 Eliot Lash
 [@Eliot_L](https://twitter.com/eliot_l)
+
+Richard Umney

@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "@fitbit/sdk": "~5.0.0"
+  },
+  "fitbit": {
+    "appUUID": "c7514968-715d-48d3-927b-4b23c54e5f71",
+    "appType": "clockface",
+    "appDisplayName": "Roni",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate",
+      "access_internet",
+      "run_background"
+    ],
+    "buildTargets": [
+      "atlas",
+      "vulcan"
+    ],
+    "i18n": {
+      "en-US": {
+        "name": "Roni"
+      }
+    },
+    "defaultLanguage": "en-US"
+  }
+}

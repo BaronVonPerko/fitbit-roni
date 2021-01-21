@@ -1,5 +1,5 @@
 import document from "document";
-import { battery, charger } from "power";
+import {battery, charger} from "power";
 import FileStore from "./fileStore";
 import {KEY_DISPLAY_BATTERY} from "./common/constants";
 
@@ -24,19 +24,15 @@ export default class Battery {
     if (batteryChargeLevel >= 15) {
       this.imgBattery.href = "icons/battery_solid_25_24px.png";
     }
-
     if (batteryChargeLevel >= 40) {
       this.imgBattery.href = "icons/battery_solid_50_24px.png";
     }
-
     if (batteryChargeLevel >= 70) {
       this.imgBattery.href = "icons/battery_solid_75_24px.png";
     }
-
     if (batteryChargeLevel >= 90) {
       this.imgBattery.href = "icons/battery_solid_24px.png";
     }
-
     // use the OS battery icon instead when the battery is low
     if (batteryChargeLevel < 15) {
       this.hideIcon();

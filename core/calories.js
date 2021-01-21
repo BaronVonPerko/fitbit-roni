@@ -1,9 +1,8 @@
 import document from "document";
-import { today, goals } from "user-activity";
+import {today, goals} from "user-activity";
 import * as util from "./common/utils";
 
 export default class Calories {
-
   constructor() {
     this.txtCals = document.getElementById("cals");
     this.imgCals = document.getElementById("cals_img");
@@ -46,5 +45,4 @@ export default class Calories {
     this.interval = null;
     this.hide();
   }
-
 }

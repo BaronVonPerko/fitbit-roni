@@ -1,5 +1,5 @@
 import clock from "clock";
-import { preferences } from "user-settings";
+import {preferences} from "user-settings";
 import * as util from "./common/utils";
 import document from "document";
 import {
@@ -7,13 +7,16 @@ import {
   DATE_FORMAT_MM_DD_YYYY,
   DATE_FORMAT_DD_MM_YYYY,
   DATE_FORMAT_MON_DD,
+  DATE_FORMAT_DD_MON,
   CLOCK_SIZES,
   CLOCK_SIZE_NORMAL,
-  CLOCK_SIZE_LARGE, KEY_CLOCK_SIZE, KEY_DATE_FORMAT, KEY_DISPLAY_SECONDS
-} from './common/constants';
+  CLOCK_SIZE_LARGE,
+  KEY_CLOCK_SIZE,
+  KEY_DATE_FORMAT,
+  KEY_DISPLAY_SECONDS
+} from '../../common/constants';
 
 export default class Clock {
-
   constructor() {
     this.txtClock = document.getElementById("clock");
     this.txtClockSec = document.getElementById("clockSec");
@@ -94,10 +97,14 @@ export default class Clock {
           dateString = `${monthName} ${day}`;
           break;
         }
+        case DATE_FORMAT_DD_MON: {
+          const monthName = util.nameOfMonth(date.getMonth());
+          dateString = `${day} ${monthName}`;
+          break;
+        }
       }
-      this.txtDate.text = `${dayOfWeek}   ${dateString}`;
+      this.txtDate.text = `${dayOfWeek} ${dateString}`;
     }
-
   }
 
   static instance = new Clock();
@@ -105,5 +112,4 @@ export default class Clock {
   static run(fileStore) {
     Clock.instance.init(fileStore);
   }
-
 }

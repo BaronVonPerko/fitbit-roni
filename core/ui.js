@@ -3,13 +3,7 @@ import HeartRate from './heartrate';
 import Steps from './steps';
 import Calories from './calories';
 import FileStore from './fileStore';
-import {
-  KEY_COLOR,
-  KEY_UI_STATE,
-  KEY_UI_STATE_CALS,
-  KEY_UI_STATE_HEART,
-  KEY_UI_STATE_STEPS
-} from "./common/constants";
+import {KEY_COLOR, KEY_UI_STATE, KEY_UI_STATE_CALS, KEY_UI_STATE_HEART, KEY_UI_STATE_STEPS} from "./common/constants"
 
 export default class UI {
   static instance = new UI();
@@ -37,7 +31,6 @@ export default class UI {
   }
 
   onClick() {
-
     const currentState = FileStore.instance.getValue(KEY_UI_STATE);
     const availableStates = [KEY_UI_STATE_STEPS, KEY_UI_STATE_HEART, KEY_UI_STATE_CALS];
     let enabledStates = [];
@@ -60,14 +53,10 @@ export default class UI {
       nextStateIndex = 0;
     }
 
-    this.setState(
-      enabledStates[nextStateIndex],
-      true,
-    );
+    this.setState(enabledStates[nextStateIndex], true);
   }
 
   setState(newState, save) {
-
     switch (newState) {
       case KEY_UI_STATE_STEPS:
         this.steps.start();
@@ -84,13 +73,11 @@ export default class UI {
         this.heartrate.stop();
         this.calories.start();
     }
-
     if (newState === undefined) {
       this.steps.stop();
       this.heartrate.stop();
       this.calories.stop();
     }
-
     if (save) {
       FileStore.instance.setValue(KEY_UI_STATE, newState);
     }

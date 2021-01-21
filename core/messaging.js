@@ -22,21 +22,20 @@ export default class Messaging {
 
     messaging.peerSocket.onmessage = evt => {
       console.log(evt.data.key + " : " + evt.data.newValue);
-
       if (!evt.data.newValue) return;
-
       const data = JSON.parse(evt.data.newValue);
-
       fileStore.setValue(evt.data.key, data);
 
       switch (evt.data.key) {
         case KEY_COLOR: {
           ui.updateColor(data);
           break;
-        } case KEY_DISPLAY_SECONDS: {
+        }
+        case KEY_DISPLAY_SECONDS: {
           Clock.instance.setDisplaySeconds(data);
           break;
-        } case KEY_CLOCK_SIZE: {
+        }
+        case KEY_CLOCK_SIZE: {
           Clock.instance.setClockSize(data);
           break;
         }

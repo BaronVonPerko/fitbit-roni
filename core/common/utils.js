@@ -8,7 +8,7 @@ export function zeroPad(i) {
 
 // Convert the day of week to human readable
 export function dayOfWeek(i) {
-  switch(i) {
+  switch (i) {
     case 0:
       return "SUN";
     case 1:
@@ -28,7 +28,7 @@ export function dayOfWeek(i) {
 
 // Convert day of month to human readable
 export function nameOfMonth(i) {
-  switch(i) {
+  switch (i) {
     case 0:
       return "JAN";
     case 1:

@@ -8,10 +8,7 @@ export default class FileStore {
     try {
       this.model = fs.readFileSync(FILENAME, FILETYPE);
     } catch (e) {
-      console.error(
-        "FileStore encountered error on load, using default state.",
-        e
-      );
+      console.error("FileStore encountered error on load, using default state.", e);
       this.model = DEFAULT_MODEL;
       this.saveModel();
     }
@@ -37,5 +34,4 @@ export default class FileStore {
       console.error("FileStore encountered an error when saving:", e);
     }
   }
-
 }
