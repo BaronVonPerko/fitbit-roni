@@ -1,6 +1,7 @@
 import document from "document";
 import {today, goals} from "user-activity";
 import * as util from "./common/utils";
+import {me as device} from "device";
 
 export default class Steps {
   constructor() {
@@ -14,7 +15,8 @@ export default class Steps {
     const steps = today.local.steps.toString();
     const goalCompletionNormal = today.local.steps / goals.steps;
     const gaugeSweepAngle = util.mapNumber(goalCompletionNormal, 0, 1, 0, 360);
-    const stepIconX = this.root.width - 40 - (18 * steps.length);
+    const iconOffset = device.screen.width === 300 ? 45 : 65;
+    const stepIconX = this.root.width - iconOffset - (18 * steps.length);
     this.txtSteps.text = steps.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     this.imgSteps.x = stepIconX;
     this.gaugeSteps.x = stepIconX - (this.imgSteps.width / 2) + 2;
