@@ -1,19 +1,19 @@
 <svg class="background" id="root" >
     <rect id="tapzone" x="0" y="0" width="100%" height="100%" pointer-events="visible" >
 
-        <image id="battery_img" x="10%" class="colorConfigurable" href="icons/battery_solid_24px.png" />
-        <text id="battery" x="10%+32" y="40" class="label" />
+        <image id="battery_img" x="12%" class="colorConfigurable" href="icons/battery_solid_24px.png" />
+        <text id="battery" x="12%+32" y="40" class="label" />
 
-        <text id="steps" x="90%" y="40" class="label" />
+        <text id="steps" x="88%" y="40" class="label" />
         <arc id="steps_gauge" class="colorConfigurable" />
         <image id="steps_img" x="$-24" class="colorConfigurable" href="icons/stat_steps_solid_24px.png" />
 
         <arc id="cals_gauge" class="colorConfigurable" />
         <image id="cals_img" x="50%" class="colorConfigurable" href="icons/stat_cals_solid_24px.png" />
-        <text id="cals" x="90%" y="40" class="label" />
+        <text id="cals" x="88%" y="40" class="label" />
 
-        <image id="heartrate_img" x="71%" y="16" class="colorConfigurable" href="icons/stat_hr_open_24px.png" />
-        <text id="heartrate" x="90%" y="40" class="label" />
+        <image id="heartrate_img" x="69%" y="16" class="colorConfigurable" href="icons/stat_hr_open_24px.png" />
+        <text id="heartrate" x="88%" y="40" class="label" />
 
         <line y1="25%" y2="25%" class="colorConfigurable" />
 

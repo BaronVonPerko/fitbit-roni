@@ -1,21 +1,15 @@
-import
-{
-  APP_NAME,
-  DATE_FORMATS,
-  CLOCK_SIZES
-} from "../common/constants";
+import {APP_NAME, DATE_FORMATS, CLOCK_SIZES} from "../../core/common/constants";
 
-function mySettings(props)
-{
+function mySettings(props) {
   return (
     <Page>
       <Section
         title=
-        {
-          <Text bold align="center">
-            {`${APP_NAME} Settings`}
-          </Text>
-        }
+          {
+            <Text bold align="center">
+              {`${APP_NAME} Settings`}
+            </Text>
+          }
       >
         <Toggle settingsKey="displaySeconds" label="Display Seconds"/>
         <Toggle settingsKey="displayBattery" label="Display Battery"/>
@@ -23,39 +17,39 @@ function mySettings(props)
           label="Date Format"
           settingsKey="dateFormat"
           options=
-          {
-            DATE_FORMATS.map(name => ({name}))
-          }
+            {
+              DATE_FORMATS.map(name => ({name}))
+            }
         />
         <Select
           label="Clock Size"
           settingsKey="clockSize"
           options=
-          {
-            CLOCK_SIZES.map(name => ({name}))
-          }
+            {
+              CLOCK_SIZES.map(name => ({name}))
+            }
         />
         <Text>UI Color</Text>
         <ColorSelect
           settingsKey="color"
           colors=
-          {[
-            {color: "magenta"},
-            {color: "deepskyblue"},
-            {color: "aqua"},
-            {color: "aquamarine"},
-            {color: "coral"},
-            {color: "gold"},
-            {color: "hotpink"},
-            {color: "thistle"},
-            {color: "plum"},
-            {color: "lightsalmon"},
-            {color: "lightcoral"},
-            {color: "indianred"},
-            {color: "aliceblue"},
-            {color: "#f00"},
-            {color: "#0f0"}
-          ]}
+            {[
+              {color: "magenta"},
+              {color: "deepskyblue"},
+              {color: "aqua"},
+              {color: "aquamarine"},
+              {color: "coral"},
+              {color: "gold"},
+              {color: "hotpink"},
+              {color: "thistle"},
+              {color: "plum"},
+              {color: "lightsalmon"},
+              {color: "lightcoral"},
+              {color: "indianred"},
+              {color: "aliceblue"},
+              {color: "#f00"},
+              {color: "#0f0"}
+            ]}
         />
       </Section>
 

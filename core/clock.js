@@ -15,6 +15,7 @@ import {
   KEY_DATE_FORMAT,
   KEY_DISPLAY_SECONDS
 } from './common/constants';
+import {isOlderVersa} from "./common/utils";
 
 export default class Clock {
   constructor() {
@@ -63,7 +64,9 @@ export default class Clock {
       // Print the clock
       const mins = util.zeroPad(today.getMinutes());
       const secs = util.zeroPad(today.getSeconds());
-      const sideTextX = hours.toString().length > 1 ? 244 : 220;
+      const sideTextX = isOlderVersa()
+        ? hours.toString().length > 1 ? 244 : 220
+        : hours.toString().length > 1 ? 284 : 260;
       this.txtClock.text = `${hours}:${mins}`;
       this.txtClockSec.text = secs;
       this.txtAMPM.text = `${ampm}`;

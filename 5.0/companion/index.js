@@ -1,27 +1,8 @@
 import * as messaging from "messaging";
-import
-{
-  settingsStorage
-} from "settings";
+import {settingsStorage} from "settings";
 
-//import "fitbit-google-analytics/companion";
-import
-{
-  DEFAULT_MODEL
-} from "../common/constants";
-
-import
-{
-  device
-} from "peer";
-
-if (!device.screen) device.screen =
-  {
-    width: 348,
-    height: 250
-  };
-settingsStorage.setItem("screenWidth", device.screen.width);
-settingsStorage.setItem("screenHeight", device.screen.height);
+import "fitbit-google-analytics/companion";
+import {DEFAULT_MODEL} from "../../core/common/constants";
 
 // Message socket opens
 messaging.peerSocket.onopen = () => {
@@ -35,11 +16,10 @@ messaging.peerSocket.onclose = () => {
 
 // A user changes settings
 settingsStorage.onchange = evt => {
-  let data =
-    {
-      key: evt.key,
-      newValue: evt.newValue
-    };
+  let data = {
+    key: evt.key,
+    newValue: evt.newValue
+  };
   sendVal(data);
 };
 
@@ -52,11 +32,10 @@ function restoreSettings() {
   for (let index = 0; index < settingsStorage.length; index++) {
     let key = settingsStorage.key(index);
     if (key) {
-      let data =
-        {
-          key: key,
-          newValue: settingsStorage.getItem(key)
-        };
+      let data = {
+        key: key,
+        newValue: settingsStorage.getItem(key)
+      };
       sendVal(data);
     }
   }
