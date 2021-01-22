@@ -14,7 +14,7 @@ import {
   KEY_CLOCK_SIZE,
   KEY_DATE_FORMAT,
   KEY_DISPLAY_SECONDS
-} from '../../common/constants';
+} from './common/constants';
 
 export default class Clock {
   constructor() {
