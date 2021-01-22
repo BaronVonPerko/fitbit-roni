@@ -1,3 +1,5 @@
+import {me as device} from "device";
+
 // Add zero in front of numbers < 10
 export function zeroPad(i) {
   if (i < 10) {
@@ -67,4 +69,9 @@ export function nameOfMonth(i) {
  */
 export function mapNumber(value, istart, istop, ostart, ostop) {
   return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
+}
+
+
+export function getIconOffset() {
+  return device.screen.width === 300 ? 45 : 75;
 }
