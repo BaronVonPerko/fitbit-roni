@@ -4,8 +4,8 @@ This is the code for the Roni watchface, currently available for:
 - Versa
 - Versa Lite
 - Versa 2
-
-*Versa 3 and Sense are both in progress*
+- Versa 3
+- Sense
 
 ---
 
