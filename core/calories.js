@@ -1,7 +1,7 @@
 import document from "document";
 import {today, goals} from "user-activity";
 import * as util from "./common/utils";
-import {getIconOffset} from "./common/utils";
+import {isOlderVersa} from "./common/utils";
 
 export default class Calories {
   constructor() {
@@ -15,7 +15,7 @@ export default class Calories {
     const calories = today.local.calories.toString();
     const goalCompletionNormal = today.local.calories / goals.calories;
     const gaugeSweepAngle = util.mapNumber(goalCompletionNormal, 0, 1, 0, 360);
-    const calsIconX = this.root.width - getIconOffset() - (18 * calories.length);
+    const calsIconX = this.root.width - (isOlderVersa() ? 45 : 75) - (18 * calories.length);
     this.txtCals.text = calories;
     this.imgCals.x = calsIconX;
     this.gaugeCals.x = calsIconX - (this.imgCals.width / 2) + 2;

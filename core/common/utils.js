@@ -71,7 +71,10 @@ export function mapNumber(value, istart, istop, ostart, ostop) {
   return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
 }
 
-
-export function getIconOffset() {
-  return device.screen.width === 300 ? 45 : 75;
+/**
+ * Check if the device has a screen size of 300x300
+ * @returns {boolean}
+ */
+export function isOlderVersa() {
+  return device.screen.width === 300 && device.screen.height === 300;
 }
